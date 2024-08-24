@@ -19,8 +19,7 @@ const CompanyOverview = () => {
           <p className='text-center text-neutral-300 w-full max-w-xl'>At LinkrDev, we help you excel academically without the stress. Our expert solutions in university projects, programming, and design are tailored to ensure you achieve top grades effortlessly. Focus on your studies while we handle the rest.</p>
         </div>
         {/* CTA */}
-        {/* bg-neutral-100 hover:bg-neutral-200 text-neutral-800 border-neutral-300 focus:ring-neutral-400 */}
-        <Button text={'Get started'} styles='bg-green-500 hover:bg-green-600 text-white border-none focus:ring-green-300'
+        <Button text={'Get started'} styles='text-nowrap bg-green-500 hover:bg-green-600/90 text-white active:scale-95'
           trailingIcon={
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-4">
               <path strokeLinecap="round" strokeLinejoin="round" d="m4.5 19.5 15-15m0 0H8.25m11.25 0v11.25" />

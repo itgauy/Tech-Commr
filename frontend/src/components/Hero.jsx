@@ -36,14 +36,14 @@ const Hero = () => {
       {/* Heading & Description */}
       <div className='flex gap-3.5 flex-col items-center'>
         <h1 className='text-center'>
-          Excel Academically, <br />
+          <span className='text-green-500'>Excel</span> Academically, <br />
           Eliminate the <span className='line-through decoration-2'>Pressure</span>.
         </h1>
         <p className='text-center w-full max-w-xl'>At LinkrDev, we help you excel academically without the stress. Our expert solutions in university projects, programming, and design are tailored to ensure you achieve top grades effortlessly. Focus on your studies while we handle the rest.</p>
       </div>
       {/* CTA */}
       {/* bg-neutral-700 hover:bg-neutral-900/90 text-zinc-100 border-neutral-800 focus:ring-neutral-400 */}
-      <Button text={'Get started'} styles='bg-green-500 hover:bg-green-600 text-white border-none focus:ring-green-300'
+      <Button text={'Get started'} styles='bg-green-500 hover:bg-green-600/90 text-white active:scale-95'
         trailingIcon={
           <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-4">
             <path strokeLinecap="round" strokeLinejoin="round" d="m4.5 19.5 15-15m0 0H8.25m11.25 0v11.25" />
