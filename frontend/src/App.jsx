@@ -1,15 +1,21 @@
 import React from 'react'
-import { Hero, CompanyOverview } from './components'
-
-// Temporary Home.jsx
+import { Home } from './pages'
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
 
 const App = () => {
   return (
-    <>
-      <Hero />
-      <CompanyOverview />
-    </>
+
+    <BrowserRouter>
+      <Routes>
+        <Route
+          path="/"
+          element={<Home />}
+        />
+      </Routes>
+    </BrowserRouter>
+
   )
 }
 
 export default App
+
