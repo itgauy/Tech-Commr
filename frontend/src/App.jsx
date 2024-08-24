@@ -1,5 +1,5 @@
 import React from 'react'
-import { Hero } from './components'
+import { Hero, CompanyOverview } from './components'
 
 // Temporary Home.jsx
 
@@ -7,6 +7,7 @@ const App = () => {
   return (
     <>
       <Hero />
+      <CompanyOverview />
     </>
   )
 }

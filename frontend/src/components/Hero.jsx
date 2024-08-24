@@ -24,7 +24,7 @@ const Hero = () => {
   ]
 
   return (
-    <section className='border flex flex-col items-center justify-center gap-8 px-4 py-44'>
+    <section className='flex flex-col items-center justify-center gap-7 px-4 py-36'>
       {/* Badge */}
       <Badge text={'Wow ganern'} styles='bg-neutral-100 text-neutral-600 border-neutral-200'
         trailingIcon={
@@ -35,11 +35,9 @@ const Hero = () => {
       />
       {/* Heading & Description */}
       <div className='flex gap-3.5 flex-col items-center'>
-        <h1 className='text-center'>Excel Academically, <br />
-          Eliminate the
-          <span className='line-through decoration-2'>
-            Pressure
-          </span>.
+        <h1 className='text-center'>
+          Excel Academically, <br />
+          Eliminate the <span className='line-through decoration-2'>Pressure</span>.
         </h1>
         <p className='text-center w-full max-w-xl'>At LinkrDev, we help you excel academically without the stress. Our expert solutions in university projects, programming, and design are tailored to ensure you achieve top grades effortlessly. Focus on your studies while we handle the rest.</p>
       </div>
@@ -60,7 +58,6 @@ const Hero = () => {
         </div>
         <span className='text-xs'>Lorem ipsum dolor sit.</span>
       </div>
-
     </section>
   )
 }
