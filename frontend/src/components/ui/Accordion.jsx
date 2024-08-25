@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 
 const Accordion = ({ title, svg, children, isOpen, onClick }) => {
   return (
-    <div className={`w-full rounded-lg overflow-hidden`}>
+    <div className={`w-full rounded-2xl overflow-hidden`}>
       <button
         className={`w-full flex justify-between items-center px-4 py-3 text-gray-800 font-medium focus:outline-none ${isOpen ? 'bg-white' : ''}`}
         onClick={onClick}

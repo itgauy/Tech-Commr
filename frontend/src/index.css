@@ -29,3 +29,27 @@
     @apply text-neutral-600 md:text-sm text-xs;
   }
 }
+
+/* ------------------------ Scrollbar Styles ------------------------ */
+.custom-scrollbar {
+  overflow-y: auto;
+}
+.custom-scrollbar::-webkit-scrollbar {
+  width: 5px;
+}
+.custom-scrollbar::-webkit-scrollbar-track {
+  @apply rounded-lg bg-transparent;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  @apply rounded-lg bg-neutral-700;
+}
+.invisible-scrollbar::-webkit-scrollbar {
+  width: 1px;
+}
+.invisible-scrollbar::-webkit-scrollbar-track {
+  @apply rounded-sm bg-transparent;
+}
+.invisible-scrollbar::-webkit-scrollbar-thumb {
+  @apply rounded-sm bg-transparent;
+}
+/* ------------------------ // Scrollbar Styles ------------------------ */
