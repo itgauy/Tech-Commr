@@ -12,13 +12,13 @@
     font-style: normal;
   }
   h1 {
-    @apply text-neutral-700 font-semibold md:leading-[4.2rem] leading-[2.5rem] md:text-6xl text-[32px];
+    @apply text-neutral-700 font-semibold md:leading-[4.2rem] leading-[2.5rem] md:text-6xl text-[30px];
     font-family: "Montserrat", sans-serif;
     font-optical-sizing: auto;
     font-weight: 700;
     font-style: normal;
   }
   p {
-    @apply text-neutral-600 text-sm;
+    @apply text-neutral-600 md:text-sm text-xs;
   }
 }
