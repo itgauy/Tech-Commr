@@ -11,12 +11,19 @@
     font-weight: 400;
     font-style: normal;
   }
-  h1 {
-    @apply text-neutral-700 font-semibold md:leading-[4.2rem] leading-[2.5rem] md:text-6xl text-[30px];
+  h1,
+  h2,
+  h3 {
     font-family: "Montserrat", sans-serif;
     font-optical-sizing: auto;
     font-weight: 700;
     font-style: normal;
+  }
+  h1 {
+    @apply text-neutral-700 font-semibold md:leading-[4.2rem] leading-[2.5rem] md:text-6xl text-[30px];
+  }
+  h3 {
+    @apply text-neutral-700 font-semibold md:leading-[4rem] leading-[2.2rem] md:text-3xl text-[18px];
   }
   p {
     @apply text-neutral-600 md:text-sm text-xs;
