@@ -24,7 +24,7 @@ const Hero = () => {
   ]
 
   return (
-    <section className='flex flex-col items-center justify-center gap-7 px-4 py-36'>
+    <section className='flex flex-col items-center justify-center md:gap-7 gap-6 px-4 py-36'>
       {/* Badge */}
       <Badge text={'Wow ganern'} styles='bg-green-200/20 text-green-500 border-green-500/40'
         trailingIcon={
@@ -54,10 +54,10 @@ const Hero = () => {
       <div className='inline-flex items-center gap-4'>
         <div>
           {avatarProfiles.map((avatar, index) => (
-            <img className="inline-block ring-2 ring-neutral-300 size-8 rounded-full -ml-1.5" src={avatar.img} alt={avatar.alt} key={index} />
+            <img className="inline-block ring-2 ring-neutral-200 md:size-8 size-7 rounded-full -ml-1.5" src={avatar.img} alt={avatar.alt} key={index} />
           ))}
         </div>
-        <span className='text-xs'>Lorem ipsum dolor sit.</span>
+        <span className='md:text-sm text-xs text-neutral-600'>Lorem ipsum dolor sit.</span>
       </div>
     </section>
   )
