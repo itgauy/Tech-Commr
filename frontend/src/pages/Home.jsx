@@ -1,5 +1,5 @@
 import React from 'react'
-import { Hero, CompanyOverview } from '../components'
+import { Hero, CompanyOverview, ServicesOverview } from '../components'
 import { motion } from 'framer-motion';
 
 const Home = () => {
@@ -12,6 +12,7 @@ const Home = () => {
     >
       <Hero />
       <CompanyOverview />
+      <ServicesOverview />
     </motion.div>
   )
 }

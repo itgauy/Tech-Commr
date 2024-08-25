@@ -45,9 +45,9 @@ const CompanyOverview = () => {
           }
         />
       </div>
-      <div className='flex flex-wrap md:gap-12 gap-8 justify-center md:px-24 md:py-16 py-10 px-12'>
+      <div className='flex flex-wrap md:gap-14 gap-10 justify-center md:px-20 md:py-20 py-10 px-12'>
         {CompanyOverviewContent.map((content, index) => (
-          <div className='w-full max-w-sm' key={index}>
+          <div className='w-full max-w-xs' key={index}>
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="text-green-500 md:size-8 size-7">
               <path fillRule="evenodd" d={content.icon} clipRule="evenodd" />
             </svg>

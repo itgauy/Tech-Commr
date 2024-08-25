@@ -20,7 +20,7 @@
     font-style: normal;
   }
   h1 {
-    @apply text-neutral-700 font-semibold md:leading-[4.2rem] leading-[2.5rem] md:text-6xl text-[30px];
+    @apply text-neutral-700 font-semibold md:leading-[4.2rem] leading-[2.2rem] md:text-6xl text-[30px];
   }
   h3 {
     @apply text-neutral-700 font-semibold md:leading-[4rem] leading-[2.2rem] md:text-3xl text-[18px];
