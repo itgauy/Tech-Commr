@@ -22,7 +22,7 @@ const CompanyOverview = () => {
     }
   ]
   return (
-    <div className='relative'>
+    <section className='relative'>
       {/* Company Logo */}
       <div className='absolute left-1/2 -translate-x-1/2 md:-top-36 -top-20 md:p-12 p-8 bg-white md:rounded-3xl rounded-2xl'>
         <img src={TechCommrLogo} alt="Tech-Commr Logo" className='md:w-40 w-24 h-auto' />
@@ -45,7 +45,7 @@ const CompanyOverview = () => {
           }
         />
       </div>
-      <div className='flex flex-wrap md:gap-14 gap-10 justify-center md:px-20 md:py-20 py-10 px-12'>
+      <div className='flex flex-wrap md:gap-14 gap-10 justify-center md:px-20 md:py-20 pb-12 py-10 px-12'>
         {CompanyOverviewContent.map((content, index) => (
           <div className='w-full max-w-xs' key={index}>
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="text-green-500 md:size-8 size-7">
@@ -58,7 +58,7 @@ const CompanyOverview = () => {
           </div>
         ))}
       </div>
-    </div>
+    </section>
   )
 }
 

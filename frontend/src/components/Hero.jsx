@@ -24,7 +24,7 @@ const Hero = () => {
   ]
 
   return (
-    <section className='flex flex-col items-center justify-center md:gap-7 gap-6 px-4 py-36'>
+    <section className='flex flex-col items-center justify-center md:gap-7 gap-6 px-6 py-36'>
       {/* Badge */}
       <Badge text={'Wow ganern'} styles='bg-green-200/20 text-green-500 border-green-500/40'
         trailingIcon={

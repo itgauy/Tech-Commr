@@ -43,13 +43,13 @@ const ServicesOverview = () => {
   ];
 
   return (
-    <div className='grid lg:grid-cols-2 grid-cols-1 lg:gap-0 md:gap-12 gap-10 md:ml-6 ml-4 md:mr-0 mr-4 mb-4'>
+    <section className='grid lg:grid-cols-2 grid-cols-1 lg:gap-0 md:gap-12 gap-10 md:ml-6 ml-4 lg:mr-0 mr-4 md:pt-10'>
       {/* Illustration/Mockup */}
-      <div className='lg:h-full h-[20rem] border bg-neutral-700 rounded-2xl self-start'>
-
+      <div className='lg:h-full h-[20rem] border bg-neutral-700 rounded-2xl self-start flex justify-center items-center text-white'>
+        Basta illustration tooo
       </div>
       {/* Content */}
-      <div className='lg:px-16 px-4 pb-8'>
+      <div className='lg:px-16 px-4'>
         <div className='space-y-6'>
           <div className='space-y-3.5'>
             <h1 className='leading-none'>What we offer?</h1>
@@ -73,7 +73,7 @@ const ServicesOverview = () => {
                 isOpen={openIndex === index}
                 onClick={() => handleAccordionClick(index)}
               >
-                <div className='md:text-sm text-xs'>
+                <div className='md:text-sm text-xs text-neutral-600'>
                   {accordion.content}
                 </div>
               </Accordion>
@@ -81,7 +81,7 @@ const ServicesOverview = () => {
           </div>
         </div>
       </div>
-    </div>
+    </section>
   )
 }
 
