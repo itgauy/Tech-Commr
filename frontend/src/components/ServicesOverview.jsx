@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Button, Accordion } from './ui'
+import TechCommrMockup from '../assets/Tech-Commr-Mockup.png'
 
 const ServicesOverview = () => {
 
@@ -45,8 +46,8 @@ const ServicesOverview = () => {
   return (
     <section className='grid lg:grid-cols-2 grid-cols-1 lg:gap-0 md:gap-12 gap-10 md:ml-6 ml-4 lg:mr-0 mr-4 md:pt-10'>
       {/* Illustration/Mockup */}
-      <div className='lg:h-full h-[20rem] border bg-neutral-700 rounded-2xl self-start flex justify-center items-center text-white'>
-        Basta illustration tooo
+      <div className='relative lg:h-full h-[20rem] border rounded-2xl self-start flex justify-center items-center text-white'>
+        <img src={TechCommrMockup} alt="Tech-Commr Mockup" className='absolute object-cover w-full h-full rounded-2xl' />
       </div>
       {/* Content */}
       <div className='lg:px-16 px-4'>

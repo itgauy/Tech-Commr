@@ -3,6 +3,7 @@
 @tailwind components;
 @tailwind utilities;
 
+/* ------------------------ Base Styles ------------------------ */
 @layer base {
   body {
     @apply bg-neutral-50;
@@ -29,6 +30,26 @@
     @apply text-neutral-600 md:text-sm text-xs;
   }
 }
+/* ------------------------ // Base Styles ------------------------ */
+
+/* ------------------------ Addition Setup styles for lenis library ------------------------ */
+html.lenis,
+html.lenis body {
+  height: auto;
+}
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+.lenis.lenis-smooth iframe {
+  pointer-events: none;
+}
+/* ------------------------ // Addition Setup styles for lenis library ------------------------ */
 
 /* ------------------------ Scrollbar Styles ------------------------ */
 .custom-scrollbar {
