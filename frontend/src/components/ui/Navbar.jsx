@@ -56,10 +56,10 @@ const Navbar = () => {
   return (
     <nav className={`fixed left-1/2 -translate-x-1/2 md:top-8 top-6 flex justify-between items-center gap-32 md:gap-[20rem] lg:gap-28 p-4 rounded-xl transition-transform duration-500 bg-white z-50 ${showNavbar ? 'md:translate-y-0' : 'md:-translate-y-28'}`}>
       {/* Logo Container */}
-      <div className='inline-flex items-center md:text-base text-xs md:gap-3 gap-2 font-bold text-nowrap'>
+      <Link to='/' className='inline-flex items-center md:text-base text-xs md:gap-3 gap-2 font-bold text-nowrap'>
         <img src={TechCommrLogo} alt="Tech-Commr Logo" className='shrink-0 md:w-8 w-6 h-auto' />
         Tech-Commr
-      </div>
+      </Link>
 
       {/* Mobile Menu Button */}
       <button

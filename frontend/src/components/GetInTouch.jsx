@@ -3,12 +3,12 @@ import { Button } from './ui'
 
 const GetInTouch = () => {
   return (
-    <section className='md:p-16 p-8 rounded-2xl bg-neutral-700 md:mx-6 mx-4 md:mb-6 mb-4'>
+    <section className='md:p-16 p-8 rounded-2xl bg-neutral-700 md:mx-6 mx-4'>
       <div className='flex flex-col md:items-center items-start md:gap-7 gap-6'>
         {/* Title and Description */}
-        <div className='space-y-3 md:text-center text-start'>
+        <div className='flex flex-col items-center gap-3 md:text-center text-start'>
           <h1 className='text-neutral-100'>
-            Get in Touch
+            We would love to help.
           </h1>
           <p className='text-neutral-300 w-full max-w-md'>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eaque incidunt totam ipsa rem perferendis quisquam excepturi.</p>
         </div>
@@ -20,7 +20,7 @@ const GetInTouch = () => {
             </svg>
           }
         />
-        <div className='flex flex-col md:items-center items-start gap-6'>
+        <div className='flex flex-col md:items-center items-start gap-4'>
           <p className='text-xs md:text-center text-start text-neutral-400'>Or you can reach us out through <br className='md:block hidden' /> these following platforms:</p>
           <div className='flex items-center md:gap-4 gap-3'>
             {[
