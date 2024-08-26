@@ -1,8 +1,10 @@
 import React from 'react'
 import { Hero, CompanyOverview, ServicesOverview, FAQs, GetInTouch } from '../components'
 import { motion } from 'framer-motion';
+import useLenisScroll from '../hooks/useLenisScroll';
 
 const Home = () => {
+  useLenisScroll();
   return (
     <motion.main
       initial={{ opacity: 0 }}
