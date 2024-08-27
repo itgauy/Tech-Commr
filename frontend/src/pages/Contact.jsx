@@ -1,5 +1,6 @@
 import React from 'react'
 import { motion } from 'framer-motion';
+import { Input } from '../components/ui'
 import useLenisScroll from '../hooks/useLenisScroll';
 
 const Contact = () => {
@@ -10,7 +11,7 @@ const Contact = () => {
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
       transition={{ duration: 0.5 }}
-      className='md:py-44 py-32 border grid md:grid-cols-2 grid-cols-1 gap-12 md:px-24 px-8'
+      className='md:pt-44 pb-24 pt-32 grid md:grid-cols-2 grid-cols-1 gap-12 md:px-24 px-8'
     >
       {/* Additional Infos */}
       <div className='md:space-y-6 space-y-5'>
@@ -61,8 +62,8 @@ const Contact = () => {
         </div>
         {/* Socials */}
         <div className='space-y-3'>
-          <p className='text-xs'>Or reach us out through this following platforms:</p>
-          <div className='flex items-center md:gap-4 gap-3'>
+          <p className='text-xs'>Or reach us out through these platforms:</p>
+          <div className='flex items-center md:gap-4 gap-2'>
             {[
               {
                 link: 'https://web.facebook.com/profile.php?id=61564666055725&mibextid=ZbWKwL&_rdc=1&_rdr',
@@ -88,7 +89,69 @@ const Contact = () => {
       </div>
       {/* Form */}
       <div>
-        <h1>Formm dineyyy</h1>
+        <div className='flex items-start gap-2 pb-4'>
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="shrink-0 text-green-500 size-4">
+            <path strokeLinecap="round" strokeLinejoin="round" d="m11.25 11.25.041-.02a.75.75 0 0 1 1.063.852l-.708 2.836a.75.75 0 0 0 1.063.853l.041-.021M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-9-3.75h.008v.008H12V8.25Z" />
+          </svg>
+          <p className='text-xs'>Kindly fill out this form, and we'll get in touch with you shortly!</p>
+        </div>
+        <form action="" className='grid md:grid-cols-2 grid-cols-1 bg-white rounded-2xl md:p-8 p-6 gap-5'>
+          {/* First Name */}
+          <Input type={'text'} placeholder={'Juan'} required={true}>
+            <p>First name</p>
+          </Input>
+          {/* Last Name */}
+          <Input type={'text'} placeholder={'Dela Cruz'} required={true}>
+            <p>Last name</p>
+          </Input>
+          {/* Email Address */}
+          <div className='md:col-span-2 col-span-1'>
+            <Input type={'email'} placeholder={'juan.dela.cruz@email.com'} required={true}>
+              <p>Email address</p>
+            </Input>
+          </div>
+          {/* Project Type */}
+          <div className='space-y-2 md:col-span-2 col-span-1'>
+            <p>I'm interested in:</p>
+            <div className='flex flex-wrap md:gap-3 gap-2'>
+              {/* Programming Option */}
+              <div className='inline-flex'>
+                <input id='programming' type="checkbox" className="hidden peer" />
+                <label htmlFor="programming" className="transition duration-300 ease-in-out flex items-center justify-between w-full md:px-5 px-3 md:py-3 py-2 text-neutral-700 bg-white border rounded-lg cursor-pointer peer-checked:border-green-500 peer-checked:text-green-500 peer-checked:bg-green-100/20 hover:bg-neutral-50/70">
+                  <span className="block w-full md:text-sm text-xs">Programming</span>
+                </label>
+              </div>
+              {/* Web Development option */}
+              <div className='inline-flex'>
+                <input id='web-development' type="checkbox" className="hidden peer" />
+                <label htmlFor="web-development" className="transition duration-300 ease-in-out flex items-center justify-between w-full md:px-5 px-3 md:py-3 py-2 text-neutral-700 bg-white border rounded-lg cursor-pointer peer-checked:border-green-500 peer-checked:text-green-500 peer-checked:bg-green-100/20 hover:bg-neutral-50/70">
+                  <span className="block w-full md:text-sm text-xs">Web Development</span>
+                </label>
+              </div>
+              {/* Database Management option */}
+              <div className='inline-flex'>
+                <input id='database-management' type="checkbox" className="hidden peer" />
+                <label htmlFor="database-management" className="transition duration-300 ease-in-out flex items-center justify-between w-full md:px-5 px-3 md:py-3 py-2 text-neutral-700 bg-white border rounded-lg cursor-pointer peer-checked:border-green-500 peer-checked:text-green-500 peer-checked:bg-green-100/20 hover:bg-neutral-50/70">
+                  <span className="block w-full md:text-sm text-xs">Database Management</span>
+                </label>
+              </div>
+              {/* Graphic Design option */}
+              <div className='inline-flex'>
+                <input id='graphic-design' type="checkbox" className="hidden peer" />
+                <label htmlFor="graphic-design" className="transition duration-300 ease-in-out flex items-center justify-between w-full md:px-5 px-3 md:py-3 py-2 text-neutral-700 bg-white border rounded-lg cursor-pointer peer-checked:border-green-500 peer-checked:text-green-500 peer-checked:bg-green-100/20 hover:bg-neutral-50/70">
+                  <span className="block w-full md:text-sm text-xs">Graphic Design</span>
+                </label>
+              </div>
+              {/* Paperworks option */}
+              <div className='inline-flex'>
+                <input id='paperworks' type="checkbox" className="hidden peer" />
+                <label htmlFor="paperworks" className="transition duration-300 ease-in-out flex items-center justify-between w-full md:px-5 px-3 md:py-3 py-2 text-neutral-700 bg-white border rounded-lg cursor-pointer peer-checked:border-green-500 peer-checked:text-green-500 peer-checked:bg-green-100/20 hover:bg-neutral-50/70">
+                  <span className="block w-full md:text-sm text-xs">Paperworks</span>
+                </label>
+              </div>
+            </div>
+          </div>
+        </form>
       </div>
     </motion.section>
   )
