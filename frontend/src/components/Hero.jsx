@@ -1,27 +1,8 @@
 import React from 'react'
+import { Link } from 'react-router-dom';
 import { Button, Badge } from './ui'
 
 const Hero = () => {
-
-  // Temporary Constants
-  const avatarProfiles = [
-    {
-      img: 'https://images.unsplash.com/photo-1568602471122-7832951cc4c5?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=facearea&facepad=2&w=300&h=300&q=80',
-      alt: ''
-    },
-    {
-      img: 'https://images.unsplash.com/photo-1568602471122-7832951cc4c5?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=facearea&facepad=2&w=300&h=300&q=80',
-      alt: ''
-    },
-    {
-      img: 'https://images.unsplash.com/photo-1568602471122-7832951cc4c5?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=facearea&facepad=2&w=300&h=300&q=80',
-      alt: ''
-    },
-    {
-      img: 'https://images.unsplash.com/photo-1568602471122-7832951cc4c5?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=facearea&facepad=2&w=300&h=300&q=80',
-      alt: ''
-    },
-  ]
 
   return (
     <section className='flex flex-col items-center justify-center md:gap-7 gap-6 px-6 py-36'>
@@ -39,24 +20,49 @@ const Hero = () => {
           <span className='text-green-500'>Excel</span> Academically, <br />
           Eliminate the <span className='line-through decoration-2'>Pressure</span>.
         </h1>
-        <p className='text-center w-full max-w-xl'>At LinkrDev, we help you excel academically without the stress. Our expert solutions in university projects, programming, and design are tailored to ensure you achieve top grades effortlessly. Focus on your studies while we handle the rest.</p>
+        <p className='text-center w-full max-w-xl'>Excel in your studies without the burden of stress. Our service is dedicated to helping you achieve academic success, providing what you need to thrive with confidence and ease. Let us guide you on your path to excellence.</p>
       </div>
-      {/* CTA */}
-      <Button text={'Inquire'} styles='bg-green-500 hover:bg-green-600/90 text-white active:scale-95'
-        trailingIcon={
-          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-4">
-            <path strokeLinecap="round" strokeLinejoin="round" d="m4.5 19.5 15-15m0 0H8.25m11.25 0v11.25" />
-          </svg>
-        }
-      />
-      {/* Avatars */}
-      <div className='inline-flex items-center gap-4'>
-        <div>
-          {avatarProfiles.map((avatar, index) => (
-            <img className="inline-block ring-2 ring-neutral-200 md:size-8 size-7 rounded-full -ml-1.5" src={avatar.img} alt={avatar.alt} key={index} />
-          ))}
+      <div className='flex flex-col items-center justify-center gap-5'>
+        {/* CTA */}
+        <Link to='/contact'>
+          <Button text={'Connect with us'} styles='bg-green-500 hover:bg-green-600/90 text-white active:scale-95'
+            trailingIcon={
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-4">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M15.042 21.672 13.684 16.6m0 0-2.51 2.225.569-9.47 5.227 7.917-3.286-.672Zm-7.518-.267A8.25 8.25 0 1 1 20.25 10.5M8.288 14.212A5.25 5.25 0 1 1 17.25 10.5" />
+              </svg>
+            }
+          />
+        </Link>
+        {/* Terms and Condition */}
+        <Link to='/terms-and-condition'>
+          <span className='text-xs underline text-green-500'>Terms and Condition</span>
+        </Link>
+        {/* Avatars */}
+        <div className='inline-flex items-center md:gap-4 gap-3'>
+          <div>
+            {[
+              {
+                initial: 'LT',
+                color: 'bg-teal-400'
+              },
+              {
+                initial: 'FM',
+                color: 'bg-amber-700'
+              },
+              {
+                initial: 'RC',
+                color: 'bg-violet-400'
+              },
+              {
+                initial: 'KS',
+                color: 'bg-pink-400'
+              }
+            ].map((avatar, index) => (
+              <span className={`inline-flex md:size-7 size-6 -ml-1 ring-2 ring-white items-center justify-center rounded-full ${avatar.color} md:text-xs text-[9px] leading-none text-white`} key={index}> {avatar.initial} </span>
+            ))}
+          </div>
+          <span className='md:text-sm text-xs text-neutral-600'>Trusted by over 99+ clients</span>
         </div>
-        <span className='md:text-sm text-xs text-neutral-600'>Lorem ipsum dolor sit.</span>
       </div>
     </section>
   )

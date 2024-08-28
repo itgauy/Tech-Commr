@@ -1,6 +1,6 @@
 import React from 'react'
+import { Link } from 'react-router-dom';
 import TechCommrLogo from '../../assets/Tech-Commr-logo.svg'
-import { Link } from 'react-router-dom'
 
 const Footer = () => {
   return (
@@ -16,8 +16,12 @@ const Footer = () => {
           <h3 className='leading-none'>Tech-Commr</h3>
           <p className='w-full max-w-md md:text-start text-center'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis explicabo elit dignissimos deleniti voluptas assumenda porro recusandae quo sunt? Reprehenderit.</p>
           <div className='flex md:gap-4 gap-2'>
-            <a href="" className='text-xs underline text-green-600'>Privacy Policy</a>
-            <a href="" className='text-xs underline text-green-600'>Terms and Conditions</a>
+            <Link to='/privacy-policy'>
+              <span className='text-xs underline text-green-500'>Privact Policy</span>
+            </Link>
+            <Link to='/terms-and-condition'>
+              <span className='text-xs underline text-green-500'>Terms and Condition</span>
+            </Link>
           </div>
         </div>
       </div>

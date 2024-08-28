@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { Accordion } from './ui';
 
 const FAQs = () => {
@@ -43,7 +44,7 @@ const FAQs = () => {
       <div className='flex flex-col items-center gap-3'>
         <h1 className='leading-none'>FAQs</h1>
         <p className='text-center w-full max-w-xl'>These are the most commonly asked questions about Tech-Commr service. <br className='md:block hidden' />
-          Can't find what you're looking for? Kindly <span className='underline text-green-500'>contact our team.</span>
+          Can't find what you're looking for? Kindly <span className='underline text-green-500'><Link to='/contact'>contact our team.</Link></span>
         </p>
       </div>
       {/* Accordion */}

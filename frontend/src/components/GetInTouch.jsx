@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom';
 import { Button } from './ui'
 
 const GetInTouch = () => {
@@ -13,13 +14,15 @@ const GetInTouch = () => {
           <p className='text-neutral-300 w-full max-w-md'>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eaque incidunt totam ipsa rem perferendis quisquam excepturi.</p>
         </div>
         {/* CTA */}
-        <Button text={'Wow ganern'} styles='text-nowrap bg-green-500 hover:bg-green-600/90 text-white active:scale-95'
-          trailingIcon={
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-4">
-              <path strokeLinecap="round" strokeLinejoin="round" d="m4.5 19.5 15-15m0 0H8.25m11.25 0v11.25" />
-            </svg>
-          }
-        />
+        <Link to='/contact'>
+          <Button text={'Connect with us'} styles='bg-green-500 hover:bg-green-600/90 text-white active:scale-95'
+            trailingIcon={
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-4">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M15.042 21.672 13.684 16.6m0 0-2.51 2.225.569-9.47 5.227 7.917-3.286-.672Zm-7.518-.267A8.25 8.25 0 1 1 20.25 10.5M8.288 14.212A5.25 5.25 0 1 1 17.25 10.5" />
+              </svg>
+            }
+          />
+        </Link>
         <div className='flex flex-col md:items-center items-start gap-4'>
           <p className='text-xs md:text-center text-start text-neutral-400'>Or you can reach us out through <br className='md:block hidden' /> these following platforms:</p>
           <div className='flex items-center md:gap-4 gap-3'>
