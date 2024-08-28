@@ -1,5 +1,5 @@
 import React from 'react'
-import { Home, Contact } from './pages'
+import { Home, Services, Contact } from './pages'
 import { Navbar, Footer } from './components/ui'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import { motion } from 'framer-motion';
@@ -18,6 +18,10 @@ const App = () => {
           <Route
             path="/"
             element={<Home />}
+          />
+          <Route
+            path="/services"
+            element={<Services />}
           />
           <Route
             path="/contact"
