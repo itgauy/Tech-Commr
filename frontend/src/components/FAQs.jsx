@@ -48,7 +48,7 @@ const FAQs = () => {
         </p>
       </div>
       {/* Accordion */}
-      <div className='w-full max-w-4xl'>
+      <div className='w-full max-w-4xl border border-red-500'>
         {faqsData.map((accordion, index) => (
           <Accordion
             key={index}

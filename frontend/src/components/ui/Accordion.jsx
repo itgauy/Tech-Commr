@@ -9,8 +9,8 @@ const Accordion = ({ title, svg, children, isOpen, onClick, styles }) => {
         onClick={onClick}
       >
         <div className='flex items-center gap-2'>
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className={`size-4 ${isOpen ? 'text-green-500' : ''}`}>
-            <path fillRule="evenodd" d={svg} clipRule="evenodd" />
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className={`size-4 ${isOpen ? 'text-green-500' : ''}`}>
+            <path strokeLinecap="round" strokeLinejoin="round" d={svg} />
           </svg>
           <span className={`md:text-base text-sm ${isOpen ? 'text-green-600' : 'text-neutral-700'}`}>{title}</span>
         </div>

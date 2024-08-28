@@ -41,22 +41,10 @@ const Hero = () => {
         <div className='inline-flex items-center md:gap-4 gap-3'>
           <div>
             {[
-              {
-                initial: 'LT',
-                color: 'bg-teal-400'
-              },
-              {
-                initial: 'FM',
-                color: 'bg-amber-700'
-              },
-              {
-                initial: 'RC',
-                color: 'bg-violet-400'
-              },
-              {
-                initial: 'KS',
-                color: 'bg-pink-400'
-              }
+              { initial: 'LT', color: 'bg-yellow-500' },
+              { initial: 'FM', color: 'bg-amber-700' },
+              { initial: 'RC', color: 'bg-violet-400' },
+              { initial: 'KS', color: 'bg-pink-400' }
             ].map((avatar, index) => (
               <span className={`inline-flex md:size-7 size-6 -ml-1 ring-2 ring-white items-center justify-center rounded-full ${avatar.color} md:text-xs text-[9px] leading-none text-white`} key={index}> {avatar.initial} </span>
             ))}

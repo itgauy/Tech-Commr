@@ -11,7 +11,7 @@ const GetInTouch = () => {
           <h1 className='text-neutral-100'>
             We would love to help.
           </h1>
-          <p className='text-neutral-300 w-full max-w-md'>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eaque incidunt totam ipsa rem perferendis quisquam excepturi.</p>
+          <p className='text-neutral-300 w-full max-w-md border border-yellow-500'>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eaque incidunt totam ipsa rem perferendis quisquam excepturi.</p>
         </div>
         {/* CTA */}
         <Link to='/contact'>

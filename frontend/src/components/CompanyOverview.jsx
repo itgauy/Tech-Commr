@@ -35,7 +35,7 @@ const CompanyOverview = () => {
           <h1 className='text-center text-neutral-100'>
             Tech-Commr
           </h1>
-          <p className='text-center text-neutral-300 w-full max-w-xl'>At LinkrDev, we help you excel academically without the stress. Our expert solutions in university projects, programming, and design are tailored to ensure you achieve top grades effortlessly. Focus on your studies while we handle the rest.</p>
+          <p className='text-center text-neutral-300 w-full max-w-xl border border-red-500'>At LinkrDev, we help you excel academically without the stress. Our expert solutions in university projects, programming, and design are tailored to ensure you achieve top grades effortlessly. Focus on your studies while we handle the rest.</p>
         </div>
         {/* CTA */}
         <Link to='/about'>
@@ -51,7 +51,7 @@ const CompanyOverview = () => {
       </div>
       <div className='flex flex-wrap md:gap-14 gap-10 justify-center md:px-20 md:py-20 pb-12 py-10 px-12'>
         {CompanyOverviewContent.map((content, index) => (
-          <div className='w-full max-w-xs' key={index}>
+          <div className='w-full max-w-xs border border-red-500' key={index}>
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="text-green-500 md:size-8 size-7">
               <path fillRule="evenodd" d={content.icon} clipRule="evenodd" />
             </svg>

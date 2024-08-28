@@ -14,7 +14,7 @@ const Footer = () => {
         {/* Logo, Description and Links */}
         <div className='flex flex-col items-center md:items-start gap-4'>
           <h3 className='leading-none'>Tech-Commr</h3>
-          <p className='w-full max-w-md md:text-start text-center'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis explicabo elit dignissimos deleniti voluptas assumenda porro recusandae quo sunt? Reprehenderit.</p>
+          <p className='w-full max-w-md md:text-start text-center border border-yellow-500'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis explicabo elit dignissimos deleniti voluptas assumenda porro recusandae quo sunt? Reprehenderit.</p>
           <div className='flex md:gap-4 gap-2'>
             <Link to='/privacy-policy'>
               <span className='text-xs underline text-green-500'>Privact Policy</span>
