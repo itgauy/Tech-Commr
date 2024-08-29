@@ -10,6 +10,7 @@ const Services = () => {
   const servicesData = [
     // Programming
     {
+      graphics: 'https://placehold.co/700x450',
       name: 'Programming',
       description: [
         'Our commitment to providing high-quality programming services is reflected in our affordable pricing structure. We offer a variety of payment options to fit your budget, and we are always willing to negotiate.',
@@ -22,6 +23,7 @@ const Services = () => {
     },
     // Web Development
     {
+      graphics: 'https://placehold.co/700x450',
       name: 'Web Development',
       description: [
         'We offer comprehensive web development services designed to build robust, user-friendly websites that cater to your specific needs. From front-end to back-end development, our team ensures that your website not only looks great but also performs optimally.',
@@ -34,6 +36,7 @@ const Services = () => {
     },
     // Database Management
     {
+      graphics: 'https://placehold.co/700x450',
       name: 'Database Management',
       description: [
         'Effective database management is crucial for the smooth operation of any business. We offer professional database management services that ensure your data is organized, secure, and easily accessible.',
@@ -45,6 +48,7 @@ const Services = () => {
     },
     // Graphic Design
     {
+      graphics: 'https://placehold.co/700x450',
       name: 'Graphic Design',
       description: [
         'Visual appeal is key to effective communication. Our graphic design services are tailored to create visually stunning and memorable designs that align with your brand identity.',
@@ -57,6 +61,7 @@ const Services = () => {
     },
     // Paper Works
     {
+      graphics: 'https://placehold.co/700x450',
       name: 'Paper Works',
       description: [
         'When it comes to academic and professional documentation, precision and clarity are essential. We provide comprehensive paper works services to help you craft well-structured and polished documents that meet your specific requirements.',
@@ -81,10 +86,7 @@ const Services = () => {
       <div className="space-y-3">
         <h1>Our Services</h1>
         <p className="w-full max-w-xl">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem, sit
-          earum ipsa at laudantium aliquam quas eos? Doloremque facilis animi
-          reprehenderit possimus, dolor enim nulla velit culpa consequuntur
-          fugiat magnam.
+          We offer a wide range of services to meet your needs. From expert programming and web development to reliable database management and creative graphic design, we deliver high-quality solutions. Additionally, our paper works service ensures your documentation is professional and polished. Let us help elevate your projects to success.
         </p>
       </div>
       <div className='space-y-24'>
@@ -92,8 +94,8 @@ const Services = () => {
           <div className="grid lg:grid-cols-2 grid-cols-1" key={index}>
             <div className="relative md:h-[28rem] h-[15rem]">
               <img
-                src="https://placehold.co/700x450"
-                alt=""
+                src={service.graphics}
+                alt={`'${service.graphics}'`}
                 className="absolute object-cover w-full h-full md:rounded-2xl rounded-xl"
               />
             </div>
