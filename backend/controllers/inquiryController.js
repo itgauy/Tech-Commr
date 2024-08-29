@@ -29,24 +29,39 @@ const getInquiry = async (req, res) => {
 const createInquiry = async (req, res) => {
   const { fname, lname, email, category, desc, agree } = req.body
 
-  let emptyFields = []
+  // let emptyFields = []
 
-  if (!fname) {
-    emptyFields.push('fname')
+  // if (!fname) {
+  //   emptyFields.push('fname')
+  // }
+  // if (!email) {                              ////////for validation
+  //   emptyFields.push('email')
+  // }
+  // if (!category) {
+  //   emptyFields.push('category')
+  // }
+  // if (!desc) {
+  //   emptyFields.push('desc')
+  // }
+  // if (!agree) {
+  //   emptyFields.push('agree')
+  // }
+  // if (emptyFields.length > 0) {
+  //   return res.status(400).json({ error: 'Please fill in all fields', emptyFields })
+  // }
+
+  // add doc to db
+  try {
+    const inquiry = await Inquiry.create({ fname, lname, email, category, desc })
+    res.status(200).json(inquiry)
+    console.log("Well done!")
+  } catch (error) {
+    res.status(400).json({ error: error.message })
   }
-  if (!email) {
-    emptyFields.push('email')
-  }
-  if (!category) {
-    emptyFields.push('category')
-  }
-  if (!desc) {
-    emptyFields.push('desc')
-  }
-  if (!agree) {
-    emptyFields.push('agree')
-  }
-  if (emptyFields.length > 0) {
-    return res.status(400).json({ error: 'Please fill in all fields', emptyFields })
-  }
+}
+
+module.exports = {
+  getInquiries,
+  getInquiry,
+  createInquiry
 }
