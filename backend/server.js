@@ -2,6 +2,7 @@ require('dotenv').config()
 
 const express = require('express')
 const mongoose = require('mongoose')
+const cors = require('cors')
 const inquiriesRoutes = require('./routes/inquiries')
 
 // express app
@@ -9,6 +10,7 @@ const app = express()
 
 // middleware
 app.use(express.json())
+app.use(cors())
 
 app.use((req, res, next) => {
   console.log(req.path, req.method)
@@ -16,7 +18,7 @@ app.use((req, res, next) => {
 })
 
 // routes
-app.use('/api/inquiries', inquiriesRoutes)
+app.use('/api', inquiriesRoutes)
 
 
 // Do not delete

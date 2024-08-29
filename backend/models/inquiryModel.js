@@ -8,8 +8,7 @@ const inquirySchema = new Schema({
     required: true
   },
   lname: {
-    type: String,
-    required: false
+    type: String
   },
   email: {
     type: String,
@@ -21,6 +20,10 @@ const inquirySchema = new Schema({
   },
   desc: {
     type: String,
+    required: true
+  },
+  termsAgreed: {
+    type: Boolean,
     required: true
   }
 }, { timestamps: true })
