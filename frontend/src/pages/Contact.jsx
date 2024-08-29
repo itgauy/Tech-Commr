@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { motion } from 'framer-motion';
-import { Input, Button, Textarea, Checkbox } from '../components/ui'
+import ContactForm from '../components/ContactForm';
 import useLenisScroll from '../hooks/useLenisScroll';
 import useScrollToTop from '../hooks/useScrollToTop';
 
@@ -8,12 +8,6 @@ const Contact = () => {
 
   useLenisScroll();
   useScrollToTop();
-
-  const [Checked, setChecked] = useState(false);
-
-  const handleChange = (e) => {
-    setChecked(e.target.checked);
-  };
 
   const contactData = [
     {
@@ -112,87 +106,7 @@ const Contact = () => {
           </svg>
           <p className='text-xs'>Kindly fill out this form, and we'll get in touch with you shortly!</p>
         </div>
-        <form action="#" className='grid md:grid-cols-2 grid-cols-1 bg-white rounded-2xl md:p-8 p-6 gap-5'>
-          {/* First Name */}
-          <Input type={'text'} placeholder={'Juan'} required={false}>
-            <p>First name</p>
-          </Input>
-          {/* Last Name */}
-          <Input type={'text'} placeholder={'Dela Cruz'} required={false}>
-            <p>Last name</p>
-          </Input>
-          {/* Email Address */}
-          <div className='md:col-span-2 col-span-1'>
-            <Input type={'email'} placeholder={'juan.dela.cruz@email.com'} required={false}>
-              <p>Email address</p>
-            </Input>
-          </div>
-          {/* Project Type */}
-          <div className='space-y-2 md:col-span-2 col-span-1'>
-            <p>I'm interested in:</p>
-            <div className='flex flex-wrap md:gap-3 gap-2'>
-              {/* Programming Option */}
-              <div className='inline-flex'>
-                <input id='programming' name='services' type="checkbox" className="hidden peer" />
-                <label htmlFor="programming" className="transition duration-300 ease-in-out flex items-center justify-between w-full md:px-5 px-3 md:py-2.5 py-2 text-neutral-700 bg-white border rounded-lg cursor-pointer peer-checked:border-green-500 peer-checked:text-green-500 peer-checked:bg-green-100/20 hover:bg-neutral-50/70">
-                  <span className="block w-full md:text-sm text-xs">Programming</span>
-                </label>
-              </div>
-              {/* Web Development Option */}
-              <div className='inline-flex'>
-                <input id='web-development' name='services' type="checkbox" className="hidden peer" />
-                <label htmlFor="web-development" className="transition duration-300 ease-in-out flex items-center justify-between w-full md:px-5 px-3 md:py-2.5 py-2 text-neutral-700 bg-white border rounded-lg cursor-pointer peer-checked:border-green-500 peer-checked:text-green-500 peer-checked:bg-green-100/20 hover:bg-neutral-50/70">
-                  <span className="block w-full md:text-sm text-xs">Web Development</span>
-                </label>
-              </div>
-              {/* Database Management Option */}
-              <div className='inline-flex'>
-                <input id='database-management' name='services' type="checkbox" className="hidden peer" />
-                <label htmlFor="database-management" className="transition duration-300 ease-in-out flex items-center justify-between w-full md:px-5 px-3 md:py-2.5 py-2 text-neutral-700 bg-white border rounded-lg cursor-pointer peer-checked:border-green-500 peer-checked:text-green-500 peer-checked:bg-green-100/20 hover:bg-neutral-50/70">
-                  <span className="block w-full md:text-sm text-xs">Database Management</span>
-                </label>
-              </div>
-              {/* Graphic Design Option */}
-              <div className='inline-flex'>
-                <input id='graphic-design' name='services' type="checkbox" className="hidden peer" />
-                <label htmlFor="graphic-design" className="transition duration-300 ease-in-out flex items-center justify-between w-full md:px-5 px-3 md:py-2.5 py-2 text-neutral-700 bg-white border rounded-lg cursor-pointer peer-checked:border-green-500 peer-checked:text-green-500 peer-checked:bg-green-100/20 hover:bg-neutral-50/70">
-                  <span className="block w-full md:text-sm text-xs">Graphic Design</span>
-                </label>
-              </div>
-              {/* Paperworks Option */}
-              <div className='inline-flex'>
-                <input id='paperworks' name='services' type="checkbox" className="hidden peer" />
-                <label htmlFor="paperworks" className="transition duration-300 ease-in-out flex items-center justify-between w-full md:px-5 px-3 md:py-2.5 py-2 text-neutral-700 bg-white border rounded-lg cursor-pointer peer-checked:border-green-500 peer-checked:text-green-500 peer-checked:bg-green-100/20 hover:bg-neutral-50/70">
-                  <span className="block w-full md:text-sm text-xs">Paperworks</span>
-                </label>
-              </div>
-            </div>
-          </div>
-          {/* Message */}
-          <div className='md:col-span-2 col-span-1'>
-            <Textarea
-              label="Tell us about your project"
-              placeholder="Enter your message here..."
-              required={false}
-              rows={2}
-              name="message"
-            />
-          </div>
-          {/* Checkbox */}
-          <div className='md:col-span-2 col-span-1'>
-            <Checkbox
-              id="Agreement"
-              label="Do you agree to the terms & conditions and privacy policy?"
-              checked={Checked}
-              onChange={handleChange}
-            />
-          </div>
-          {/* Submit */}
-          <div className='md:col-span-2 col-span-1 pt-2'>
-            <Button type={'submit'} text={'Get started'} styles='w-full flex items-center justify-center bg-green-500 hover:bg-green-600/90 text-white active:scale-95'
-            />
-          </div>
-        </form>
+        <ContactForm />
       </div>
     </motion.section>
   )
