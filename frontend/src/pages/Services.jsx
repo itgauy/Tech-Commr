@@ -2,6 +2,7 @@ import React from 'react';
 import useLenisScroll from '../hooks/useLenisScroll';
 import useScrollToTop from '../hooks/useScrollToTop';
 import { motion } from 'framer-motion';
+import webDevBanner from '../assets/web-dev-banner-test.png'
 
 const Services = () => {
   useLenisScroll();
@@ -23,7 +24,7 @@ const Services = () => {
     },
     // Web Development
     {
-      graphics: 'https://placehold.co/700x450',
+      graphics: webDevBanner,
       name: 'Web Development',
       description: [
         'We offer comprehensive web development services designed to build robust, user-friendly websites that cater to your specific needs. From front-end to back-end development, our team ensures that your website not only looks great but also performs optimally.',
