@@ -16,7 +16,7 @@ const ServicesOverview = () => {
       svg: 'm6.75 7.5 3 2.25-3 2.25m4.5 0h3m-9 8.25h13.5A2.25 2.25 0 0 0 21 18V6a2.25 2.25 0 0 0-2.25-2.25H5.25A2.25 2.25 0 0 0 3 6v12a2.25 2.25 0 0 0 2.25 2.25Z',
       title: 'Programming',
       content:
-        <div className='flex items-start gap-24 px-12'>
+        <div className='grid grid-cols-2 md:gap-24 gap-2 md:px-12'>
           <ul className='space-y-1'>
             {['PHP', 'Java', 'JavaScript', 'Python'].map((programming, index) => (
               <li className='flex gap-3 items-start' key={index}>
@@ -43,7 +43,7 @@ const ServicesOverview = () => {
       svg: 'M17.25 6.75 22.5 12l-5.25 5.25m-10.5 0L1.5 12l5.25-5.25m7.5-3-4.5 16.5',
       title: 'Web Development',
       content:
-        <div className='flex items-start gap-24 px-12'>
+        <div className='grid grid-cols-2 md:gap-24 gap-2 md:px-12'>
           <ul className='space-y-1'>
             {['HTML', 'CSS', 'JavaScript', 'ReactJS'].map((programming, index) => (
               <li className='flex gap-3 items-start' key={index}>
@@ -71,7 +71,7 @@ const ServicesOverview = () => {
       svg: 'M20.25 6.375c0 2.278-3.694 4.125-8.25 4.125S3.75 8.653 3.75 6.375m16.5 0c0-2.278-3.694-4.125-8.25-4.125S3.75 4.097 3.75 6.375m16.5 0v11.25c0 2.278-3.694 4.125-8.25 4.125s-8.25-1.847-8.25-4.125V6.375m16.5 0v3.75m-16.5-3.75v3.75m16.5 0v3.75C20.25 16.153 16.556 18 12 18s-8.25-1.847-8.25-4.125v-3.75m16.5 0c0 2.278-3.694 4.125-8.25 4.125s-8.25-1.847-8.25-4.125',
       title: 'Database Management',
       content:
-        <div className='flex items-start gap-24 px-12'>
+        <div className='grid grid-cols-2 md:gap-24 gap-2 md:px-12'>
           <ul className='space-y-1'>
             {['MySQL', 'MongoDB'].map((programming, index) => (
               <li className='flex gap-3 items-start' key={index}>
@@ -88,7 +88,7 @@ const ServicesOverview = () => {
       svg: 'M15.514 3.293a1 1 0 0 0-1.415 0L12.151 5.24a.93.93 0 0 1 .056.052l6.5 6.5a.97.97 0 0 1 .052.056L20.707 9.9a1 1 0 0 0 0-1.415l-5.193-5.193ZM7.004 8.27l3.892-1.46 6.293 6.293-1.46 3.893a1 1 0 0 1-.603.591l-9.494 3.355a1 1 0 0 1-.98-.18l6.452-6.453a1 1 0 0 0-1.414-1.414l-6.453 6.452a1 1 0 0 1-.18-.98l3.355-9.494a1 1 0 0 1 .591-.603Z',
       title: 'Graphic Design',
       content:
-        <div className='flex items-start gap-24 px-12'>
+        <div className='grid grid-cols-2 md:gap-24 gap-2 md:px-12'>
           <ul className='space-y-1'>
             {['UI/UX Design', 'Brand Identity Design', 'Brochure and Flyer Designs', 'Social Media Graphics'].map((programming, index) => (
               <li className='flex gap-3 items-start' key={index}>
@@ -115,7 +115,7 @@ const ServicesOverview = () => {
       svg: 'M12 7.5h1.5m-1.5 3h1.5m-7.5 3h7.5m-7.5 3h7.5m3-9h3.375c.621 0 1.125.504 1.125 1.125V18a2.25 2.25 0 0 1-2.25 2.25M16.5 7.5V18a2.25 2.25 0 0 0 2.25 2.25M16.5 7.5V4.875c0-.621-.504-1.125-1.125-1.125H4.125C3.504 3.75 3 4.254 3 4.875V18a2.25 2.25 0 0 0 2.25 2.25h13.5M6 7.5h3v3H6v-3Z',
       title: 'Paper Works',
       content:
-        <div className='flex items-start gap-24 px-12'>
+        <div className='grid grid-cols-2 md:gap-24 gap-2 md:px-12'>
           <ul className='space-y-1'>
             {['Thesis/Capstone Paper', 'School Assignments', 'School Reveiwers', 'Essay Writing'].map((programming, index) => (
               <li className='flex gap-3 items-start' key={index}>

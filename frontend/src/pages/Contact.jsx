@@ -2,9 +2,11 @@ import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Input, Button, Textarea, Checkbox } from '../components/ui'
 import useLenisScroll from '../hooks/useLenisScroll';
+import useScrollToTop from '../hooks/useScrollToTop';
 
 const Contact = () => {
   useLenisScroll();
+  useScrollToTop();
 
   const [Checked, setChecked] = useState(false);
 
