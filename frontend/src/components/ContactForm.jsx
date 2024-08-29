@@ -15,11 +15,11 @@ const ContactForm = () => {
   const [termsError, setTermsError] = useState(false)
 
   const categories = [
-    'Category 1',
-    'Category 2',
-    'Category 3',
-    'Category 3',
-    // Add more categories as needed
+    'Programming',
+    'Web Development',
+    'Database Management',
+    'Graphic Design',
+    'Paper Works',
   ];
   const handleCategoryClick = (category) => {
     if (selectedCategories.includes(category)) {
@@ -78,21 +78,21 @@ const ContactForm = () => {
     <form className='grid md:grid-cols-2 grid-cols-1 bg-white rounded-2xl md:p-8 p-6 gap-5' onSubmit={handleSubmit}>
       {/* First Name */}
       <Input type={'text'} placeholder={'Juan'} value={fname} onChange={(e) => setFname(e.target.value)} error={errorFields.includes('fname')}>
-        <p>First name</p>
+        <p>First name <span className='text-red-500'>*</span></p>
       </Input>
       {/* Last Name */}
       <Input type={'text'} placeholder={'Dela Cruz'} value={lname} onChange={(e) => setLname(e.target.value)}>
-        <p>Last name</p>
+        <p>Last name <span className='text-neutral-400 text-xs'>(Optional)</span></p>
       </Input>
       {/* Email Address */}
       <div className='md:col-span-2 col-span-1'>
         <Input type={'email'} placeholder={'juan.dela.cruz@email.com'} value={email} onChange={(e) => setEmail(e.target.value)} error={errorFields.includes('email')}>
-          <p>Email address</p>
+          <p>Email address <span className='text-red-500'>*</span></p>
         </Input>
       </div>
       {/* Category Updated AAAAaAAAASASASAAAAA */}
       <div className='space-y-2 md:col-span-2 col-span-1'>
-        <p>I'm interested in:</p>
+        <p>I'm interested in: <span className='text-red-500'>*</span></p>
         <div className='flex flex-wrap md:gap-3 gap-2'>
           {categories.map((category, index) => (
             <div key={index} className='inline-flex'>
@@ -106,12 +106,13 @@ const ContactForm = () => {
             </div>
           ))}
         </div>
-        {categoriesError && <div style={{ color: 'red' }}>Please select at least one category</div>}
+        {categoriesError && <div className='text-red-500 text-xs'>Please select at least one category</div>}
       </div>
       {/* Message */}
       <div className='md:col-span-2 col-span-1'>
         <Textarea
           label="Tell us about your project"
+          required={true}
           placeholder="Enter your message here..."
           rows={2}
           name="message"
@@ -130,11 +131,11 @@ const ContactForm = () => {
           onChange={(e) => setTermsAgreed(e.target.checked)}
           error={termsError}
         />
-        {termsError && <div style={{ color: 'red' }}>Please agree to the terms and conditions</div>}
+        {termsError && <div className='text-red-500 text-xs pt-2'>Please agree to the terms and conditions</div>}
       </div>
       {/* TO BE CHANGED BY OUR HEADMASTER UI/UX DESIGNER */}
-      {error && <div style={{ color: 'red' }}>{error}</div>}
-      {success && <div style={{ color: 'green' }}>{success}</div>}
+      {error && <div className='text-red-500 md:text-sm text-xs'>{error}</div>}
+      {success && <div className='text-green-500 md:text-sm text-xs'>{success}</div>}
       {/* Submit */}
       <div className='md:col-span-2 col-span-1 pt-2'>
         <Button type={'submit'} text={'Get started'} styles='w-full flex items-center justify-center bg-green-500 hover:bg-green-600/90 text-white active:scale-95'

@@ -5,7 +5,7 @@ const Textarea = ({ label, placeholder, required, value, rows = 4, name, onChang
 
   return (
     <div className='flex flex-col gap-1.5 items-start'>
-      {label && <label className="md:text-sm text-xs font-medium text-neutral-600">{label}</label>}
+      {label && <label className="md:text-sm text-xs font-medium text-neutral-600">{label} {required ? (<span className='text-red-500'>*</span>) : ('')}</label>}
       <textarea
         className={className}
         placeholder={placeholder}
