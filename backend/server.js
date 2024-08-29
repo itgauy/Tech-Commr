@@ -2,6 +2,7 @@ require('dotenv').config()
 
 const express = require('express')
 const mongoose = require('mongoose')
+const inquiriesRoutes = require('./routes/inquiries')
 
 // express app
 const app = express()
@@ -10,12 +11,12 @@ const app = express()
 app.use(express.json())
 
 app.use((req, res, next) => {
-  console.log()(req.path, req.method)
+  console.log(req.path, req.method)
   next()
 })
 
 // routes
-
+app.use('/api/inquiries', inquiriesRoutes)
 
 
 // Do not delete
@@ -24,13 +25,13 @@ app.use((req, res, next) => {
 // })
 
 // app.listen(4000, () => {
-//   console.log('4000 listening')
+//   console.log('3000 listening')
 // })
 
 // db
 mongoose.connect(process.env.MONGO_URI)
   .then(() => {
-    // listen for requests (4000 local)
+    // listen for requests (3000 local)
     app.listen(process.env.PORT, () => {
       console.log('connected on db and listening on port', process.env.PORT)
     })
