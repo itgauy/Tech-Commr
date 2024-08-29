@@ -5,6 +5,7 @@ import useLenisScroll from '../hooks/useLenisScroll';
 import useScrollToTop from '../hooks/useScrollToTop';
 
 const Contact = () => {
+
   useLenisScroll();
   useScrollToTop();
 
@@ -113,16 +114,16 @@ const Contact = () => {
         </div>
         <form action="#" className='grid md:grid-cols-2 grid-cols-1 bg-white rounded-2xl md:p-8 p-6 gap-5'>
           {/* First Name */}
-          <Input type={'text'} placeholder={'Juan'} required={true}>
+          <Input type={'text'} placeholder={'Juan'} required={false}>
             <p>First name</p>
           </Input>
           {/* Last Name */}
-          <Input type={'text'} placeholder={'Dela Cruz'} required={true}>
+          <Input type={'text'} placeholder={'Dela Cruz'} required={false}>
             <p>Last name</p>
           </Input>
           {/* Email Address */}
           <div className='md:col-span-2 col-span-1'>
-            <Input type={'email'} placeholder={'juan.dela.cruz@email.com'} required={true}>
+            <Input type={'email'} placeholder={'juan.dela.cruz@email.com'} required={false}>
               <p>Email address</p>
             </Input>
           </div>
@@ -132,35 +133,35 @@ const Contact = () => {
             <div className='flex flex-wrap md:gap-3 gap-2'>
               {/* Programming Option */}
               <div className='inline-flex'>
-                <input id='programming' type="checkbox" className="hidden peer" />
+                <input id='programming' name='services' type="checkbox" className="hidden peer" />
                 <label htmlFor="programming" className="transition duration-300 ease-in-out flex items-center justify-between w-full md:px-5 px-3 md:py-2.5 py-2 text-neutral-700 bg-white border rounded-lg cursor-pointer peer-checked:border-green-500 peer-checked:text-green-500 peer-checked:bg-green-100/20 hover:bg-neutral-50/70">
                   <span className="block w-full md:text-sm text-xs">Programming</span>
                 </label>
               </div>
-              {/* Web Development option */}
+              {/* Web Development Option */}
               <div className='inline-flex'>
-                <input id='web-development' type="checkbox" className="hidden peer" />
+                <input id='web-development' name='services' type="checkbox" className="hidden peer" />
                 <label htmlFor="web-development" className="transition duration-300 ease-in-out flex items-center justify-between w-full md:px-5 px-3 md:py-2.5 py-2 text-neutral-700 bg-white border rounded-lg cursor-pointer peer-checked:border-green-500 peer-checked:text-green-500 peer-checked:bg-green-100/20 hover:bg-neutral-50/70">
                   <span className="block w-full md:text-sm text-xs">Web Development</span>
                 </label>
               </div>
-              {/* Database Management option */}
+              {/* Database Management Option */}
               <div className='inline-flex'>
-                <input id='database-management' type="checkbox" className="hidden peer" />
+                <input id='database-management' name='services' type="checkbox" className="hidden peer" />
                 <label htmlFor="database-management" className="transition duration-300 ease-in-out flex items-center justify-between w-full md:px-5 px-3 md:py-2.5 py-2 text-neutral-700 bg-white border rounded-lg cursor-pointer peer-checked:border-green-500 peer-checked:text-green-500 peer-checked:bg-green-100/20 hover:bg-neutral-50/70">
                   <span className="block w-full md:text-sm text-xs">Database Management</span>
                 </label>
               </div>
-              {/* Graphic Design option */}
+              {/* Graphic Design Option */}
               <div className='inline-flex'>
-                <input id='graphic-design' type="checkbox" className="hidden peer" />
+                <input id='graphic-design' name='services' type="checkbox" className="hidden peer" />
                 <label htmlFor="graphic-design" className="transition duration-300 ease-in-out flex items-center justify-between w-full md:px-5 px-3 md:py-2.5 py-2 text-neutral-700 bg-white border rounded-lg cursor-pointer peer-checked:border-green-500 peer-checked:text-green-500 peer-checked:bg-green-100/20 hover:bg-neutral-50/70">
                   <span className="block w-full md:text-sm text-xs">Graphic Design</span>
                 </label>
               </div>
-              {/* Paperworks option */}
+              {/* Paperworks Option */}
               <div className='inline-flex'>
-                <input id='paperworks' type="checkbox" className="hidden peer" />
+                <input id='paperworks' name='services' type="checkbox" className="hidden peer" />
                 <label htmlFor="paperworks" className="transition duration-300 ease-in-out flex items-center justify-between w-full md:px-5 px-3 md:py-2.5 py-2 text-neutral-700 bg-white border rounded-lg cursor-pointer peer-checked:border-green-500 peer-checked:text-green-500 peer-checked:bg-green-100/20 hover:bg-neutral-50/70">
                   <span className="block w-full md:text-sm text-xs">Paperworks</span>
                 </label>
@@ -172,7 +173,7 @@ const Contact = () => {
             <Textarea
               label="Tell us about your project"
               placeholder="Enter your message here..."
-              required
+              required={false}
               rows={2}
               name="message"
             />

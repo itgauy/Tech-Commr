@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Checkbox = ({ id, label, checked, onChange, disabled }) => {
+const Checkbox = ({ id, label, checked, onChange, disabled, required }) => {
   return (
     <div className="flex items-start gap-3">
       <input
@@ -10,6 +10,7 @@ const Checkbox = ({ id, label, checked, onChange, disabled }) => {
         checked={checked}
         onChange={onChange}
         disabled={disabled}
+        required={required}
       />
       <label
         htmlFor={id}

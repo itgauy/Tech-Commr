@@ -8,29 +8,6 @@ const Navbar = () => {
   const { pathname } = useLocation();
   const [isOpen, setIsOpen] = useState(false);
 
-  // Nav Scroll Effect
-  const [showNavbar, setShowNavbar] = useState(true);
-  const [lastScrollY, setLastScrollY] = useState(0);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      if (window.scrollY > lastScrollY) {
-        // Scroll down
-        setShowNavbar(false);
-      } else {
-        // Scroll up
-        setShowNavbar(true);
-      }
-      setLastScrollY(window.scrollY);
-    };
-
-    window.addEventListener('scroll', handleScroll);
-
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-    };
-  }, [lastScrollY]);
-
   // For Menu in small screens
   const handleToggleMenu = () => {
     setIsOpen(!isOpen);
@@ -54,7 +31,7 @@ const Navbar = () => {
   };
 
   return (
-    <nav className={`fixed left-1/2 -translate-x-1/2 md:top-8 top-6 flex justify-between items-center gap-32 md:gap-[20rem] lg:gap-28 p-4 rounded-xl transition-transform duration-500 bg-white z-50 ${showNavbar ? 'md:translate-y-0' : 'md:-translate-y-28'}`}>
+    <nav className={`fixed left-1/2 -translate-x-1/2 md:top-8 top-6 flex justify-between items-center gap-32 md:gap-[20rem] lg:gap-28 p-4 rounded-xl transition-transform duration-500 bg-white z-50`}>
       {/* Logo Container */}
       <Link to='/' className='inline-flex items-center md:text-base text-xs md:gap-3 gap-2 font-bold text-nowrap'>
         <img src={TechCommrLogo} alt="Tech-Commr Logo" className='shrink-0 md:w-8 w-6 h-auto' />
