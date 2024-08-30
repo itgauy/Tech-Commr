@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
-import { Input, Button, Textarea, Checkbox } from '../components/ui';
+import React, { useState } from 'react'
+import { Link } from 'react-router-dom'
+import { Input, Button, Textarea, Checkbox } from '../components/ui'
 
 const ContactForm = () => {
   const [fname, setFname] = useState('')
@@ -21,6 +21,7 @@ const ContactForm = () => {
     'Database Management',
     'Graphic Design',
     'Paper Works',
+    'Others',
   ];
   const handleCategoryClick = (category) => {
     if (selectedCategories.includes(category)) {
@@ -42,11 +43,11 @@ const ContactForm = () => {
       if (selectedCategories.length === 0) setCategoriesError(true)
       if (!termsAgreed) setTermsError(true)
 
-      // Update state to re-render input fields with error prop
       setErrorFields(errorFields)
 
       return
     }
+    setErrorFields([])
     setCategoriesError(false)
     setTermsError(false)
     try {
@@ -159,3 +160,5 @@ const ContactForm = () => {
 }
 
 export default ContactForm
+
+

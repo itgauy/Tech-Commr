@@ -1,14 +1,14 @@
 const express = require('express')
 const {
-  // getInquiries,
+  getInquiries,
   // getInquiry,
   createInquiry
 } = require('../controllers/inquiryController')
 
 const router = express.Router()
 
-// // GET all inquiries
-// router.get('/', getInquiries)
+// GET all inquiries
+router.get('/inquiries', getInquiries)
 
 // // GET a single inquiry
 // router.get('/', getInquiry)
