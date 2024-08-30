@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { Input, Button, Textarea, Checkbox } from '../components/ui';
 
 const ContactForm = () => {
@@ -112,7 +113,7 @@ const ContactForm = () => {
       <div className='md:col-span-2 col-span-1'>
         <Textarea
           label="Tell us about your project"
-          required={true}
+          ast={true}
           placeholder="Enter your message here..."
           rows={2}
           name="message"
@@ -125,13 +126,24 @@ const ContactForm = () => {
       <div className='md:col-span-2 col-span-1'>
         <Checkbox
           id="Agreement"
-          label="Do you agree to the terms & conditions and privacy policy?"
+          label={
+            <>
+              Do you agree to the{' '}
+              <Link to="/terms-and-conditions" className="text-green-600 underline">
+                terms & conditions
+              </Link>{' '}
+              and{' '}
+              <Link to="/privacy-policy" className="text-green-600 underline">
+                privacy policy
+              </Link>?
+            </>
+          }
           value={termsAgreed}
           checked={termsAgreed}
           onChange={(e) => setTermsAgreed(e.target.checked)}
           error={termsError}
         />
-        {termsError && <div className='text-red-500 text-xs pt-2'>Please agree to the terms and conditions</div>}
+        {termsError && <div className='text-red-500 text-xs pt-2'>Please agree to the terms & conditions and privacy policy </div>}
       </div>
       {/* TO BE CHANGED BY OUR HEADMASTER UI/UX DESIGNER */}
       {error && <div className='text-red-500 md:text-sm text-xs'>{error}</div>}
