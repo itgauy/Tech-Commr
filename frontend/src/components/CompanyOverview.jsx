@@ -12,12 +12,12 @@ const CompanyOverview = () => {
       desc: 'Our fixed-price model ensures you know the cost upfront, with no hidden fees. This approach allows for transparent budgeting and peace of mind from the start.'
     },
     {
-      icon: 'M12.963 2.286a.75.75 0 0 0-1.071-.136 9.742 9.742 0 0 0-3.539 6.176 7.547 7.547 0 0 1-1.705-1.715.75.75 0 0 0-1.152-.082A9 9 0 1 0 15.68 4.534a7.46 7.46 0 0 1-2.717-2.248ZM15.75 14.25a3.75 3.75 0 1 1-7.313-1.172c.628.465 1.35.81 2.133 1a5.99 5.99 0 0 1 1.925-3.546 3.75 3.75 0 0 1 3.255 3.718Z',
+      icon: ['M9.315 7.584C12.195 3.883 16.695 1.5 21.75 1.5a.75.75 0 0 1 .75.75c0 5.056-2.383 9.555-6.084 12.436A6.75 6.75 0 0 1 9.75 22.5a.75.75 0 0 1-.75-.75v-4.131A15.838 15.838 0 0 1 6.382 15H2.25a.75.75 0 0 1-.75-.75 6.75 6.75 0 0 1 7.815-6.666ZM15 6.75a2.25 2.25 0 1 0 0 4.5 2.25 2.25 0 0 0 0-4.5Z', 'M5.26 17.242a.75.75 0 1 0-.897-1.203 5.243 5.243 0 0 0-2.05 5.022.75.75 0 0 0 .625.627 5.243 5.243 0 0 0 5.022-2.051.75.75 0 1 0-1.202-.897 3.744 3.744 0 0 1-3.008 1.51c0-1.23.592-2.323 1.51-3.008Z'],
       title: 'On-Time Delivery',
       desc: 'We guarantee on-time delivery for all projects. If we miss a deadline, you get your money back. Your time is valuable, and we respect that.'
     },
     {
-      icon: 'M12.963 2.286a.75.75 0 0 0-1.071-.136 9.742 9.742 0 0 0-3.539 6.176 7.547 7.547 0 0 1-1.705-1.715.75.75 0 0 0-1.152-.082A9 9 0 1 0 15.68 4.534a7.46 7.46 0 0 1-2.717-2.248ZM15.75 14.25a3.75 3.75 0 1 1-7.313-1.172c.628.465 1.35.81 2.133 1a5.99 5.99 0 0 1 1.925-3.546 3.75 3.75 0 0 1 3.255 3.718Z',
+      icon: 'M14.615 1.595a.75.75 0 0 1 .359.852L12.982 9.75h7.268a.75.75 0 0 1 .548 1.262l-10.5 11.25a.75.75 0 0 1-1.272-.71l1.992-7.302H3.75a.75.75 0 0 1-.548-1.262l10.5-11.25a.75.75 0 0 1 .913-.143Z',
       title: 'Quick Turnaround',
       desc: 'Our experienced team delivers high-quality work quickly, without sacrificing quality. You can rely on us to complete your project on time and to your satisfaction.'
     }
@@ -54,7 +54,9 @@ const CompanyOverview = () => {
         {CompanyOverviewContent.map((content, index) => (
           <div className='w-full max-w-xs space-y-4' key={index}>
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="text-green-500 md:size-8 size-7">
-              <path fillRule="evenodd" d={content.icon} clipRule="evenodd" />
+              {Array.isArray(content.icon) ? content.icon.map((p, idx) => (
+                <path d={p} key={idx} />
+              )) : <path d={content.icon} />}
             </svg>
             <h3 className='leading-none'>
               {content.title}

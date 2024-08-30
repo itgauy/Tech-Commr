@@ -3,6 +3,7 @@ import About from './About'
 import Services from './Services'
 import Contact from './Contact'
 import TAC from './TAC'
+import Privacy from './Privacy'
 
 export {
   Home,
@@ -10,4 +11,5 @@ export {
   Services,
   Contact,
   TAC,
+  Privacy,
 }

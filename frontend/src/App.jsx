@@ -1,5 +1,5 @@
 import React from 'react'
-import { Home, About, Services, Contact, TAC } from './pages'
+import { Home, About, Services, Contact, TAC, Privacy } from './pages'
 import { Navbar, Footer } from './components/ui'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import { motion } from 'framer-motion';
@@ -34,6 +34,10 @@ const App = () => {
           <Route
             path="/terms-and-condition"
             element={<TAC />}
+          />
+          <Route
+            path="/privacy-policy"
+            element={<Privacy />}
           />
         </Routes>
         <Footer />
