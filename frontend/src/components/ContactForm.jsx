@@ -150,7 +150,7 @@ const ContactForm = () => {
       {success && <div className='text-green-500 md:text-sm text-xs'>{success}</div>}
       {/* Submit */}
       <div className='md:col-span-2 col-span-1 pt-2'>
-        <Button type={'submit'} text={'Get started'} styles='w-full flex items-center justify-center bg-green-500 hover:bg-green-600/90 text-white active:scale-95'
+        <Button type={'submit'} text={'Submit'} styles='w-full flex items-center justify-center bg-green-500 hover:bg-green-600/90 text-white active:scale-95'
         />
       </div>
     </form>

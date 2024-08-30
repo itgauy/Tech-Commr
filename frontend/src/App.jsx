@@ -1,5 +1,5 @@
 import React from 'react'
-import { Home, About, Services, Contact } from './pages'
+import { Home, About, Services, Contact, TAC } from './pages'
 import { Navbar, Footer } from './components/ui'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import { motion } from 'framer-motion';
@@ -30,6 +30,10 @@ const App = () => {
           <Route
             path="/contact"
             element={<Contact />}
+          />
+          <Route
+            path="/terms-and-condition"
+            element={<TAC />}
           />
         </Routes>
         <Footer />
