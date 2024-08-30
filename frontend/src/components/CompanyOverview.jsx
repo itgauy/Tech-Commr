@@ -9,19 +9,20 @@ const CompanyOverview = () => {
     {
       icon: 'M12.963 2.286a.75.75 0 0 0-1.071-.136 9.742 9.742 0 0 0-3.539 6.176 7.547 7.547 0 0 1-1.705-1.715.75.75 0 0 0-1.152-.082A9 9 0 1 0 15.68 4.534a7.46 7.46 0 0 1-2.717-2.248ZM15.75 14.25a3.75 3.75 0 1 1-7.313-1.172c.628.465 1.35.81 2.133 1a5.99 5.99 0 0 1 1.925-3.546 3.75 3.75 0 0 1 3.255 3.718Z',
       title: 'Fixed Price Projects',
-      desc: 'You know exactly how much you will pay before we start working on your project.'
+      desc: 'Our fixed-price model ensures you know the cost upfront, with no hidden fees. This approach allows for transparent budgeting and peace of mind from the start.'
     },
     {
       icon: 'M12.963 2.286a.75.75 0 0 0-1.071-.136 9.742 9.742 0 0 0-3.539 6.176 7.547 7.547 0 0 1-1.705-1.715.75.75 0 0 0-1.152-.082A9 9 0 1 0 15.68 4.534a7.46 7.46 0 0 1-2.717-2.248ZM15.75 14.25a3.75 3.75 0 1 1-7.313-1.172c.628.465 1.35.81 2.133 1a5.99 5.99 0 0 1 1.925-3.546 3.75 3.75 0 0 1 3.255 3.718Z',
-      title: 'Receive on time',
-      desc: 'A money-back guarantee if your paper is not delivered on time.'
+      title: 'On-Time Delivery',
+      desc: 'We guarantee on-time delivery for all projects. If we miss a deadline, you get your money back. Your time is valuable, and we respect that.'
     },
     {
       icon: 'M12.963 2.286a.75.75 0 0 0-1.071-.136 9.742 9.742 0 0 0-3.539 6.176 7.547 7.547 0 0 1-1.705-1.715.75.75 0 0 0-1.152-.082A9 9 0 1 0 15.68 4.534a7.46 7.46 0 0 1-2.717-2.248ZM15.75 14.25a3.75 3.75 0 1 1-7.313-1.172c.628.465 1.35.81 2.133 1a5.99 5.99 0 0 1 1.925-3.546 3.75 3.75 0 0 1 3.255 3.718Z',
-      title: 'Fast work turnaround',
-      desc: 'You can be confident that your project will be completed to your satisfaction.'
+      title: 'Quick Turnaround',
+      desc: 'Our experienced team delivers high-quality work quickly, without sacrificing quality. You can rely on us to complete your project on time and to your satisfaction.'
     }
-  ]
+  ];
+
   return (
     <section className='relative'>
       {/* Company Logo */}
@@ -51,11 +52,11 @@ const CompanyOverview = () => {
       </div>
       <div className='flex flex-wrap md:gap-14 gap-10 justify-center md:px-20 md:py-20 pb-12 py-10 px-12'>
         {CompanyOverviewContent.map((content, index) => (
-          <div className='w-full max-w-xs border border-red-500' key={index}>
+          <div className='w-full max-w-xs space-y-4' key={index}>
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="text-green-500 md:size-8 size-7">
               <path fillRule="evenodd" d={content.icon} clipRule="evenodd" />
             </svg>
-            <h3>
+            <h3 className='leading-none'>
               {content.title}
             </h3>
             <p>{content.desc}</p>

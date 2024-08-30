@@ -27,7 +27,10 @@
     @apply text-neutral-700 font-semibold md:leading-[3.8rem] leading-[2rem] md:text-5xl text-[25px];
   }
   h3 {
-    @apply text-neutral-700 font-semibold md:leading-[4rem] leading-[2.2rem] md:text-3xl text-[18px];
+    @apply text-neutral-700 font-semibold md:leading-[3.5rem] leading-[2.2rem] md:text-3xl text-[18px];
+  }
+  h4 {
+    @apply text-neutral-700 font-semibold md:leading-[3.2rem] leading-[2rem] md:text-xl text-[15px];
   }
   p {
     @apply text-neutral-600 md:text-sm text-xs;
