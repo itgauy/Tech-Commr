@@ -4,6 +4,7 @@ import Services from './Services'
 import Contact from './Contact'
 import TAC from './TAC'
 import Privacy from './Privacy'
+import NoPage from './NoPage'
 
 export {
   Home,
@@ -12,4 +13,5 @@ export {
   Contact,
   TAC,
   Privacy,
+  NoPage,
 }

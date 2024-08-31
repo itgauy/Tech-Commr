@@ -34,8 +34,8 @@ const Hero = () => {
           />
         </Link>
         {/* Terms and Condition */}
-        <Link to='/terms-and-condition'>
-          <span className='text-xs underline text-green-500'>Terms and Condition</span>
+        <Link to='/terms-and-conditions'>
+          <span className='text-xs underline text-green-500'>Terms and Conditions</span>
         </Link>
         {/* Avatars */}
         <div className='inline-flex items-center md:gap-4 gap-3'>

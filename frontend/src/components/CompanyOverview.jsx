@@ -52,7 +52,7 @@ const CompanyOverview = () => {
       </div>
       <div className='flex flex-wrap md:gap-14 gap-10 justify-center md:px-20 md:py-20 pb-12 py-10 px-12'>
         {CompanyOverviewContent.map((content, index) => (
-          <div className='w-full max-w-xs space-y-4' key={index}>
+          <div className='w-full max-w-xs md:space-y-7 space-y-4' key={index}>
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="text-green-500 md:size-8 size-7">
               {Array.isArray(content.icon) ? content.icon.map((p, idx) => (
                 <path d={p} key={idx} />
