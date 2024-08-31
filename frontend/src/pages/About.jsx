@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { Company, GetInTouch } from '../components';
 import { Link } from 'react-router-dom';
-import TechCommrLogo from '../assets/Tech-Commr-logo.svg'
 import { Button } from '../components/ui'
 import useLenisScroll from '../hooks/useLenisScroll';
 import useScrollToTop from '../hooks/useScrollToTop';
@@ -16,38 +16,53 @@ const About = () => {
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
       transition={{ duration: 0.5 }}
-      className='md:pt-64 pb-24 pt-52'
+      className='md:pt-64 pt-52'
     >
-      <div className='relative'>
-        {/* Company Logo */}
-        <div className='absolute left-1/2 -translate-x-1/2 md:-top-36 -top-20 md:p-12 p-8 bg-white md:rounded-3xl rounded-2xl'>
-          <img src={TechCommrLogo} alt="Tech-Commr Logo" className='md:w-40 w-24 h-auto' />
-        </div>
-        {/* Container */}
-        <div className='flex flex-col items-center gap-9 md:mx-6 mx-4 md:mt-12 mt-0 px-6 md:pt-36 pt-28 md:pb-16 pb-10 bg-neutral-700 rounded-2xl'>
-          {/* Title and Description */}
-          <div className='flex flex-col items-center gap-8'>
-            <h1 className='text-center text-neutral-100'>
-              Tech-Commr
-            </h1>
-            <div className='space-y-8'>
-              <div className='flex flex-col items-center justify-center gap-4'>
-                <div className='flex flex-col items-center justify-center gap-3'>
-                  <p className='text-neutral-400 text-xs'>Founded by</p>
-                  <img className="inline-block md:size-20 size-16 ring-2 border-4 border-neutral-700 ring-green-500 rounded-full" src="https://avatars.githubusercontent.com/u/143796803?v=4" alt="Lian Torres" />
-                  <div>
-                    <p className='text-center text-lg text-green-400'>Lian Torres</p>
-                    <p className='text-center text-xs text-neutral-400'>Populary known as <span className='text-neutral-200'>ITGAUY</span></p>
-                  </div>
-                </div>
+      <Company />
+      <section className='grid lg:grid-cols-2 grid-cols-1 lg:gap-0 md:gap-12 gap-10 md:mr-6 mr-4 lg:ml-0 ml-4 md:pt-10'>
+        {/* Content */}
+        <div className='order-2 lg:order-1 lg:px-16 px-4'>
+          <div className='space-y-7'>
+            <div className='space-y-6 pb-6'>
+              <h2 className='leading-none'>We are driven by values</h2>
+              <div className='space-y-5'>
+                <p>We are driven by the values of excellence, integrity, respect, teamwork, and innovation. These values guide our decisions and actions, and they help us to create a positive and productive work environment.</p>
+                <p>We believe that these values are essential for success in any business, but they are especially important in the academic world. When we are driven by these values, we are able to provide our clients with the best possible service and help them to achieve their academic goals.</p>
               </div>
-              <p className='text-center text-neutral-300 w-full max-w-2xl'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque, facilis porro aspernatur ducimus placeat ea fugit est nam laborum doloremque suscipit voluptatum autem reiciendis! Maxime exercitationem dicta cupiditate aliquam totam. Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque, facilis porro aspernatur ducimus placeat</p>
-              <p className='text-center text-neutral-300 w-full max-w-2xl'> Sea fugit est nam laborum doloremque suscipit voluptatum autem reiciendis! Maxime exercitationem dicta cupiditate aliquam totam.Sea fugit est nam laborum doloremque suscipit voluptatum autem reiciendis! Maxime exercitationem dicta cupiditate aliquam totam.</p>
             </div>
+            {/* CTA */}
+            <Link to='/contact'>
+              <Button text={"Let's talk"} styles='bg-green-500 hover:bg-green-600/90 text-white active:scale-95'
+                trailingIcon={
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="size-4">
+                    <path fillRule="evenodd" d="M4.804 21.644A6.707 6.707 0 0 0 6 21.75a6.721 6.721 0 0 0 3.583-1.029c.774.182 1.584.279 2.417.279 5.322 0 9.75-3.97 9.75-9 0-5.03-4.428-9-9.75-9s-9.75 3.97-9.75 9c0 2.409 1.025 4.587 2.674 6.192.232.226.277.428.254.543a3.73 3.73 0 0 1-.814 1.686.75.75 0 0 0 .44 1.223ZM8.25 10.875a1.125 1.125 0 1 0 0 2.25 1.125 1.125 0 0 0 0-2.25ZM10.875 12a1.125 1.125 0 1 1 2.25 0 1.125 1.125 0 0 1-2.25 0Zm4.875-1.125a1.125 1.125 0 1 0 0 2.25 1.125 1.125 0 0 0 0-2.25Z" clipRule="evenodd" />
+                  </svg>
+                }
+              />
+            </Link>
           </div>
-
         </div>
+        {/* Illustration/Mockup */}
+        <div className='order-1 lg:order-2 relative lg:h-full h-[20rem] border rounded-2xl self-start flex justify-center items-center text-white'>
+          <img src='https://pbs.twimg.com/media/DtfLYF3XcAERkRB.jpg' alt="Tech-Commr Mockup" className='absolute object-cover w-full h-full rounded-2xl' />
+        </div>
+      </section>
+      {/* Vision and Mission */}
+      <div className='flex flex-wrap md:gap-14 gap-10 justify-center md:px-20 md:py-24 py-16 px-12'>
+        {[
+          { title: 'Vision', content: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque, facilis porro aspernatur ducimus placeat ea fugit est nam laborum doloremque suscipit voluptatum autem reiciendis! Maxime exercitationem dicta cupiditate aliquam totaam.' },
+          { title: 'Mission', content: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque, facilis porro aspernatur ducimus placeat ea fugit est nam laborum doloremque suscipit voluptatum autem reiciendis! Maxime exercitationem dicta cupiditate aliquam totaam.' }
+        ].map((content, index) => (
+          <div className='text-center w-full max-w-md md:space-y-7 space-y-4' key={index}>
+            <h3 className='leading-none'>
+              Our <span className='text-green-500'>{content.title}</span>
+            </h3>
+            <p>{content.content}</p>
+          </div>
+        ))}
       </div>
+      {/* Get in Touch */}
+      <GetInTouch />
     </motion.section>
   )
 }
