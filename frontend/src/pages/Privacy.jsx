@@ -72,15 +72,15 @@ const Privacy = () => {
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
       transition={{ duration: 0.5 }}
-      className='md:pt-52 pt-36 space-y-28'
+      className='md:pt-52 pt-36 md:space-y-28 space-y-24'
     >
-      <div className='px-8 md:px-[23rem] space-y-20'>
+      <div className='px-8 md:px-[23rem] md:space-y-16 space-y-12'>
         <h1>Privacy Policy</h1>
         {/* Privacy Policy items */}
-        <div className='space-y-12'>
+        <div className='md:space-y-12 space-y-10'>
           {privacyData.map((item, index) => (
-            <div className='md:space-y-3 space-y-2' key={index}>
-              <h3>{item.title}</h3>
+            <div className='md:space-y-6 space-y-3' key={index}>
+              <h3 className='leading-[1.6rem]'>{item.title}</h3>
               {item.content}
             </div>
           ))}

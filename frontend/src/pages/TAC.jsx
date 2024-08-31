@@ -139,7 +139,7 @@ const TAC = () => {
         </div>
         {/* Terms and Conditions items */}
         {tacData.map((item, index) => (
-          <div className='md:space-y-6 space-y-5' key={index}>
+          <div className='md:space-y-6 space-y-4' key={index}>
             <h3>{item.title}</h3>
             {item.content}
           </div>

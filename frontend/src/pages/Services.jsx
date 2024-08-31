@@ -1,6 +1,7 @@
 import React from 'react';
 import useLenisScroll from '../hooks/useLenisScroll';
 import useScrollToTop from '../hooks/useScrollToTop';
+import { GetInTouch } from '../components';
 import { motion } from 'framer-motion';
 import webDevBanner from '../assets/web-dev-banner-test.png'
 
@@ -82,58 +83,64 @@ const Services = () => {
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
       transition={{ duration: 0.5 }}
-      className="md:pt-44 pb-24 pt-32 md:px-24 px-8 space-y-20"
+      className="md:pt-44 pt-32 md:space-y-28 space-y-24"
     >
-      <div className="space-y-3">
-        <h1>Our Services</h1>
-        <p className="w-full max-w-xl">
-          We offer a wide range of services to meet your needs. From expert programming and web development to reliable database management and creative graphic design, we deliver high-quality solutions. Additionally, our paper works service ensures your documentation is professional and polished. Let us help elevate your projects to success.
-        </p>
-      </div>
-      <div className='space-y-24'>
-        {servicesData.map((service, index) => (
-          <div className="grid lg:grid-cols-2 grid-cols-1" key={index}>
-            <div className="relative md:h-[28rem] h-[15rem]">
-              <img
-                src={service.graphics}
-                alt={`'${service.graphics}'`}
-                className="absolute object-cover w-full h-full md:rounded-2xl rounded-xl"
-              />
-            </div>
-            <div className="lg:pl-16 pt-6 lg:pt-0 md:space-y-12 space-y-8">
-              <div className="space-y-4">
-                <h3 className="leading-none">{service.name}</h3>
-                {service.description.map((desc, descIndex) => (
-                  <p key={descIndex}>{desc}</p>
-                ))}
+      <div className='md:px-24 px-8 space-y-20'>
+        {/* Header */}
+        <div className="space-y-3">
+          <h1>Our Services</h1>
+          <p className="w-full max-w-xl">
+            We offer a wide range of services to meet your needs. From expert programming and web development to reliable database management and creative graphic design, we deliver high-quality solutions. Additionally, our paper works service ensures your documentation is professional and polished. Let us help elevate your projects to success.
+          </p>
+        </div>
+        {/* Services */}
+        <div className='md:space-y-24 space-y-16'>
+          {servicesData.map((service, index) => (
+            <div className="grid lg:grid-cols-2 grid-cols-1" key={index}>
+              <div className="relative md:h-[28rem] h-[15rem]">
+                <img
+                  src={service.graphics}
+                  alt={`'${service.graphics}'`}
+                  className="absolute object-cover w-full h-full md:rounded-2xl rounded-xl"
+                />
               </div>
-              <div className="grid grid-cols-2 gap-4 text-neutral-600">
-                {service.items.map((column, colIndex) => (
-                  <ul className="space-y-1" key={colIndex}>
-                    {column.map((item, itemIndex) => (
-                      <li className="flex gap-3 items-start md:text-sm text-xs" key={itemIndex}>
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          viewBox="0 0 24 24"
-                          fill="currentColor"
-                          className="shrink-0 mt-[2px] size-4 text-green-500"
-                        >
-                          <path
-                            fillRule="evenodd"
-                            d="M2.25 12c0-5.385 4.365-9.75 9.75-9.75s9.75 4.365 9.75 9.75-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12Zm13.36-1.814a.75.75 0 1 0-1.22-.872l-3.236 4.53L9.53 12.22a.75.75 0 0 0-1.06 1.06l2.25 2.25a.75.75 0 0 0 1.14-.094l3.75-5.25Z"
-                            clipRule="evenodd"
-                          />
-                        </svg>
-                        {item}
-                      </li>
-                    ))}
-                  </ul>
-                ))}
+              <div className="lg:pl-16 pt-6 lg:pt-0 md:space-y-12 space-y-8">
+                <div className="space-y-4">
+                  <h3 className="leading-none">{service.name}</h3>
+                  {service.description.map((desc, descIndex) => (
+                    <p key={descIndex}>{desc}</p>
+                  ))}
+                </div>
+                <div className="grid grid-cols-2 gap-4 text-neutral-600">
+                  {service.items.map((column, colIndex) => (
+                    <ul className="space-y-1" key={colIndex}>
+                      {column.map((item, itemIndex) => (
+                        <li className="flex gap-3 items-start md:text-sm text-xs" key={itemIndex}>
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 24 24"
+                            fill="currentColor"
+                            className="shrink-0 mt-[2px] size-4 text-green-500"
+                          >
+                            <path
+                              fillRule="evenodd"
+                              d="M2.25 12c0-5.385 4.365-9.75 9.75-9.75s9.75 4.365 9.75 9.75-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12Zm13.36-1.814a.75.75 0 1 0-1.22-.872l-3.236 4.53L9.53 12.22a.75.75 0 0 0-1.06 1.06l2.25 2.25a.75.75 0 0 0 1.14-.094l3.75-5.25Z"
+                              clipRule="evenodd"
+                            />
+                          </svg>
+                          {item}
+                        </li>
+                      ))}
+                    </ul>
+                  ))}
+                </div>
               </div>
             </div>
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
+      {/* Get In Touch */}
+      <GetInTouch />
     </motion.section>
   );
 };
