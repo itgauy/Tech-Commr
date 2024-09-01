@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import useLenisScroll from '../hooks/useLenisScroll';
 import useScrollToTop from '../hooks/useScrollToTop';
@@ -34,22 +34,53 @@ const Feedback = () => {
       name: 'Juan Dela Cruz',
       date: 'September 1, 2024 at 3:33 PM',
       rate: 2,
-      comment: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus sint unde harum accusantium veritatis ipsam recusandae eveniet soluta minus. Eum dicta sed dolores perspiciatis eligendi amet blanditiis enim eius nesciunt.',
+      comment: 'Lorem ipsum domet blanditiis enim eius nesciunt.',
     }, {
       initial: 'JC',
       name: 'Juan Dela Cruz',
       date: 'September 1, 2024 at 3:33 PM',
       rate: 4,
-      comment: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus sint unde harum accusantium veritatis ipsam recusandae eveniet soluta minus. Eum dicta sed dolores perspiciatis eligendi amet blanditiis enim eius nesciunt.',
+      comment: 'Lorem ipsum dolor sit amet consectetur adipisigendi amet blanditiis enim eius nesciunt.',
     },
     {
       initial: 'JC',
       name: 'Juan Dela Cruz',
       date: 'September 1, 2024 at 3:33 PM',
       rate: 1,
-      comment: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus sint unde harum accusantium veritatis ipsam recusandae eveniet soluta minus. Eum dicta sed dolores perspiciatis eligendi amet blanditiis enim eius nesciunt.',
+      comment: 'Lorem ipsum dolor sit amet consectetur adipiss sint unde harum accusantium veritatis ipsam recusandae eveniet soluta minus. Eum dicta sed dolores piciatis eligendi amet blanditiis enim eius nesciunt.',
+    },
+    {
+      initial: 'JC',
+      name: 'Juan Dela Cruz',
+      date: 'September 1, 2024 at 3:33 PM',
+      rate: 4,
+      comment: 'Lorem ipsum dolor sit amet consect eligendi amet blanditiis enim eius nesciunt.',
     }
   ]
+
+
+  // Pagination logic
+  const commentsPerPage = 4;
+  const [currentPage, setCurrentPage] = useState(1);
+
+  const indexOfLastComment = currentPage * commentsPerPage;
+  const indexOfFirstComment = indexOfLastComment - commentsPerPage;
+  const currentComments = commentsData.slice(indexOfFirstComment, indexOfLastComment);
+
+  const totalPages = Math.ceil(commentsData.length / commentsPerPage);
+
+
+  const nextPage = () => {
+    if (currentPage < totalPages) {
+      setCurrentPage(currentPage + 1);
+    }
+  };
+
+  const prevPage = () => {
+    if (currentPage > 1) {
+      setCurrentPage(currentPage - 1);
+    }
+  };
 
   return (
     <motion.section
@@ -82,28 +113,55 @@ const Feedback = () => {
           </div>
           {/* Recent Comments */}
           <div className='space-y-4'>
-            <p className='text-base font-semibold'>Recent Comments</p>
+            <div className='flex justify-between items-end'>
+              <div className='space-y-1'>
+                <p className='text-base font-semibold'>Recent Comments</p>
+                <p className='text-xs'>Page {currentPage} of {totalPages}</p>
+              </div>
+              {/* Pagination Controls */}
+              <div className='flex space-x-2'>
+                <button
+                  onClick={prevPage}
+                  disabled={currentPage === 1}
+                  className='px-3.5 py-1.5 rounded-lg text-xs md:text-sm bg-green-300/10 hover:bg-green-300/20 text-green-500 disabled:opacity-50 disabled:text-neutral-400 disabled:bg-neutral-200/50 active:scale-95 disabled:cursor-not-allowed transition duration-300 ease-in-out'
+                >
+                  Previous
+                </button>
+                <button
+                  onClick={nextPage}
+                  disabled={currentPage === totalPages}
+                  className='px-3.5 py-1.5 rounded-lg text-xs md:text-sm bg-green-300/10 hover:bg-green-300/20 text-green-500 disabled:opacity-50 disabled:text-neutral-400 disabled:bg-neutral-200/50 active:scale-95 disabled:cursor-not-allowed transition duration-300 ease-in-out'
+                >
+                  Next
+                </button>
+              </div>
+            </div>
             {/* Container */}
-            <div>
-              {/* Feedback Card */}
-              {commentsData.map((feedback, index) => (
+            <motion.div
+              key={currentPage} // Ensure each page has a unique key for proper animation
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.5 }}
+            >
+              {currentComments.map((feedback, index) => (
                 <div className='border-b py-7 space-y-4' key={index}>
                   <div className='flex items-center gap-4'>
-                    <span className='inline-flex md:size-9 size-8 -ml-1 border-2 border-neutral-50 ring-2 ring-neutral-300 items-center justify-center rounded-full bg-green-500 md:text-md text-[11px] leading-none text-white'> {feedback.initial} </span>
+                    <span className='inline-flex md:size-9 size-8 -ml-1 border-2 border-neutral-50 ring-2 ring-neutral-300 items-center justify-center rounded-full bg-green-500 md:text-md text-[11px] leading-none text-white'>
+                      {feedback.initial}
+                    </span>
                     <div className='flex flex-col items-start gap-[3px]'>
                       <p className='font-medium text-sm'>{feedback.name}</p>
                       <p className='text-xs text-neutral-400'>{feedback.date}</p>
                     </div>
                   </div>
                   <div className='pl-11 md:pl-12 space-y-3'>
-                    {/* Rate */}
                     <StarRatingDisplay rating={feedback.rate} />
-                    {/* Comment */}
                     <p>{feedback.comment}</p>
                   </div>
                 </div>
               ))}
-            </div>
+            </motion.div>
           </div>
         </div>
       </div>
