@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Company, GetInTouch } from '../components';
+import { Company, GetInTouch, Team } from '../components';
 import { Link } from 'react-router-dom';
 import { Button } from '../components/ui'
 import useLenisScroll from '../hooks/useLenisScroll';

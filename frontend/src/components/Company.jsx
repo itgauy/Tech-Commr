@@ -1,4 +1,5 @@
 import React from 'react'
+import Team from './Team';
 import TechCommrLogo from '../assets/Tech-Commr-logo.svg'
 
 const Company = () => {
@@ -65,6 +66,8 @@ const Company = () => {
           </div>
         </div>
       </div>
+      {/* Team */}
+      <Team />
       {/*  */}
       <div className='flex flex-wrap md:gap-14 gap-10 justify-center md:px-20 md:py-20 pb-12 py-10 px-12'>
         {CompanyOverviewContent.map((content, index) => (
