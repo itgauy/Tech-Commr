@@ -4,9 +4,52 @@ import useLenisScroll from '../hooks/useLenisScroll';
 import useScrollToTop from '../hooks/useScrollToTop';
 import { GetInTouch, FeedbackForm } from '../components';
 
+const StarRatingDisplay = ({ rating }) => {
+  const totalStars = 5;
+  return (
+    <div className="flex">
+      {[...Array(totalStars)].map((_, index) => (
+        <svg key={index} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className={`size-4 ${index < rating ? 'text-yellow-400' : 'text-neutral-200'}`}>
+          <path fillRule="evenodd" d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.006 5.404.434c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.434 2.082-5.005Z" clipRule="evenodd" />
+        </svg>
+      ))}
+    </div>
+  );
+};
+
 const Feedback = () => {
   useLenisScroll();
   useScrollToTop();
+
+  const commentsData = [
+    {
+      initial: 'JC',
+      name: 'Juan Dela Cruz',
+      date: 'September 1, 2024 at 3:33 PM',
+      rate: 4,
+      comment: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus sint unde harum accusantium veritatis ipsam recusandae eveniet soluta minus. Eum dicta sed dolores perspiciatis eligendi amet blanditiis enim eius nesciunt.',
+    },
+    {
+      initial: 'JC',
+      name: 'Juan Dela Cruz',
+      date: 'September 1, 2024 at 3:33 PM',
+      rate: 2,
+      comment: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus sint unde harum accusantium veritatis ipsam recusandae eveniet soluta minus. Eum dicta sed dolores perspiciatis eligendi amet blanditiis enim eius nesciunt.',
+    }, {
+      initial: 'JC',
+      name: 'Juan Dela Cruz',
+      date: 'September 1, 2024 at 3:33 PM',
+      rate: 4,
+      comment: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus sint unde harum accusantium veritatis ipsam recusandae eveniet soluta minus. Eum dicta sed dolores perspiciatis eligendi amet blanditiis enim eius nesciunt.',
+    },
+    {
+      initial: 'JC',
+      name: 'Juan Dela Cruz',
+      date: 'September 1, 2024 at 3:33 PM',
+      rate: 1,
+      comment: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus sint unde harum accusantium veritatis ipsam recusandae eveniet soluta minus. Eum dicta sed dolores perspiciatis eligendi amet blanditiis enim eius nesciunt.',
+    }
+  ]
 
   return (
     <motion.section
@@ -21,7 +64,6 @@ const Feedback = () => {
         <div className='grid lg:grid-cols-2 grid-cols-1 gap-12'>
           {/* Feedback Form Container */}
           <div className='space-y-10'>
-            {/* Header */}
             <div className="space-y-3">
               <h1>Pidbak</h1>
               <p className="w-full max-w-xl">
@@ -38,8 +80,31 @@ const Feedback = () => {
               <FeedbackForm />
             </div>
           </div>
-          {/* Recent Feedbacks Container */}
-          <div className='border'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi iste at voluptate explicabo maxime ipsum laborum eum temporibus. Iste quibusdam facere non eius dolorem itaque voluptates blanditiis earum repellat velit.</div>
+          {/* Recent Comments */}
+          <div className='space-y-4'>
+            <p className='text-base font-semibold'>Recent Comments</p>
+            {/* Container */}
+            <div>
+              {/* Feedback Card */}
+              {commentsData.map((feedback, index) => (
+                <div className='border-b py-7 space-y-4' key={index}>
+                  <div className='flex items-center gap-4'>
+                    <span className='inline-flex md:size-9 size-8 -ml-1 border-2 border-neutral-50 ring-2 ring-neutral-300 items-center justify-center rounded-full bg-green-500 md:text-md text-[11px] leading-none text-white'> {feedback.initial} </span>
+                    <div className='flex flex-col items-start gap-[3px]'>
+                      <p className='font-medium text-sm'>{feedback.name}</p>
+                      <p className='text-xs text-neutral-400'>{feedback.date}</p>
+                    </div>
+                  </div>
+                  <div className='pl-11 md:pl-12 space-y-3'>
+                    {/* Rate */}
+                    <StarRatingDisplay rating={feedback.rate} />
+                    {/* Comment */}
+                    <p>{feedback.comment}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
         </div>
       </div>
       {/* Get in Touch */}
