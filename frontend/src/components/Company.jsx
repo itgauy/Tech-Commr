@@ -61,8 +61,8 @@ const Company = () => {
                 </div>
               </div>
             </div>
-            <p className='text-center text-neutral-300 w-full max-w-2xl'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque, facilis porro aspernatur ducimus placeat ea fugit est nam laborum doloremque suscipit voluptatum autem reiciendis! Maxime exercitationem dicta cupiditate aliquam totam. Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque, facilis porro aspernatur ducimus placeat</p>
-            <p className='text-center text-neutral-300 w-full max-w-2xl'> Sea fugit est nam laborum doloremque suscipit voluptatum autem reiciendis! Maxime exercitationem dicta cupiditate aliquam totam.Sea fugit est nam laborum doloremque suscipit voluptatum autem reiciendis! Maxime exercitationem dicta cupiditate aliquam totam.</p>
+            <p className='text-center text-neutral-300 w-full max-w-2xl border border-red-500'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque, facilis porro aspernatur ducimus placeat ea fugit est nam laborum doloremque suscipit voluptatum autem reiciendis! Maxime exercitationem dicta cupiditate aliquam totam. Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque, facilis porro aspernatur ducimus placeat</p>
+            <p className='text-center text-neutral-300 w-full max-w-2xl border border-red-500'> Sea fugit est nam laborum doloremque suscipit voluptatum autem reiciendis! Maxime exercitationem dicta cupiditate aliquam totam.Sea fugit est nam laborum doloremque suscipit voluptatum autem reiciendis! Maxime exercitationem dicta cupiditate aliquam totam.</p>
           </div>
         </div>
       </div>

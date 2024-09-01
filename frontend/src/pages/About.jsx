@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Company, GetInTouch, Team } from '../components';
+import TechCommrMockup from '../assets/Tech-Commr-MobileMockup.png'
 import { Link } from 'react-router-dom';
 import { Button } from '../components/ui'
 import useLenisScroll from '../hooks/useLenisScroll';
@@ -43,8 +44,8 @@ const About = () => {
           </div>
         </div>
         {/* Illustration/Mockup */}
-        <div className='order-1 lg:order-2 relative lg:h-full h-[20rem] border rounded-2xl self-start flex justify-center items-center text-white'>
-          <img src='https://pbs.twimg.com/media/DtfLYF3XcAERkRB.jpg' alt="Tech-Commr Mockup" className='absolute object-cover w-full h-full rounded-2xl' />
+        <div className='order-1 lg:order-2 relative lg:h-full h-[11rem] border rounded-2xl self-start flex justify-center items-center text-white'>
+          <img src={TechCommrMockup} alt="Tech-Commr Mockup" className='absolute object-cover w-full h-full rounded-2xl' />
         </div>
       </section>
       {/* Vision and Mission */}
@@ -53,7 +54,7 @@ const About = () => {
           { title: 'Vision', content: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque, facilis porro aspernatur ducimus placeat ea fugit est nam laborum doloremque suscipit voluptatum autem reiciendis! Maxime exercitationem dicta cupiditate aliquam totaam.' },
           { title: 'Mission', content: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque, facilis porro aspernatur ducimus placeat ea fugit est nam laborum doloremque suscipit voluptatum autem reiciendis! Maxime exercitationem dicta cupiditate aliquam totaam.' }
         ].map((content, index) => (
-          <div className='text-center w-full max-w-md md:space-y-7 space-y-4' key={index}>
+          <div className='text-center w-full max-w-md md:space-y-7 space-y-4 border border-red-500' key={index}>
             <h3 className='leading-none'>
               Our <span className='text-green-500'>{content.title}</span>
             </h3>

@@ -4,7 +4,7 @@ const Team = () => {
 
   const ProfileCard = ({ profile, name, roles = [], quote, socials = [] }) => {
     return (
-      <div className='p-4 md:space-y-8 space-y-6 flex flex-col items-center'>
+      <div className='p-4 md:space-y-8 space-y-6 flex flex-col items-center border border-red-500'>
         <div className='flex flex-col items-center md:gap-7 gap-4'>
           <div className='relative md:w-[15rem] w-[10rem] md:h-[15rem] h-[10rem]'>
             <img src={profile} alt={name} className='absolute object-cover w-full h-full border-neutral-50 border-4 ring-4 ring-green-500 rounded-full' />
