@@ -5,6 +5,7 @@ import FAQs from './FAQs'
 import GetInTouch from './GetInTouch'
 import Company from './Company'
 import Team from './Team'
+import FeedbackForm from './FeedbackForm'
 
 export {
   Hero,
@@ -14,4 +15,5 @@ export {
   GetInTouch,
   Company,
   Team,
+  FeedbackForm
 }
