@@ -50,7 +50,7 @@ const Contact = () => {
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
       transition={{ duration: 0.5 }}
-      className='md:pt-44 pb-24 pt-32 grid md:grid-cols-2 grid-cols-1 gap-12 md:px-24 px-8'
+      className='md:pt-44 pb-24 pt-32 grid lg:grid-cols-2 grid-cols-1 gap-12 md:px-24 px-8'
     >
       {/* Additional Infos */}
       <div className='md:space-y-6 space-y-5'>
