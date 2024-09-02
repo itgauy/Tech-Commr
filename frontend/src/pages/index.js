@@ -6,6 +6,7 @@ import Feedback from './Feedback'
 import TAC from './TAC'
 import Privacy from './Privacy'
 import NoPage from './NoPage'
+import Admin from './Admin'
 
 export {
   Home,
@@ -16,4 +17,5 @@ export {
   TAC,
   Privacy,
   NoPage,
+  Admin,
 }
