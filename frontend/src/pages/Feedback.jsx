@@ -96,9 +96,10 @@ const Feedback = () => {
           {/* Feedback Form Container */}
           <div className='space-y-10'>
             <div className="space-y-3">
-              <h1>Pidbak</h1>
+              <h2>We value <br /> your <span className='text-green-500'>feedback</span>!
+              </h2>
               <p className="w-full max-w-xl">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt officiis praesentium ipsum omnis. Alias natus vel error corrupti non laudantium harum odio nam, optio hic nesciunt impedit perspiciatis explicabo aspernatur?
+                Your insights help us improve and tailor our web services to better meet your needs. Please take a moment to share your thoughts with us.
               </p>
             </div>
             <div>
@@ -106,7 +107,7 @@ const Feedback = () => {
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="shrink-0 text-green-500 size-4">
                   <path strokeLinecap="round" strokeLinejoin="round" d="m11.25 11.25.041-.02a.75.75 0 0 1 1.063.852l-.708 2.836a.75.75 0 0 0 1.063.853l.041-.021M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-9-3.75h.008v.008H12V8.25Z" />
                 </svg>
-                <p className='text-xs'>Kindly fill out this form, and we'll get in touch with you shortly!</p>
+                <p className='text-xs'>Complete the form below, and we'll follow up with you soon to discuss your feedback.</p>
               </div>
               <FeedbackForm />
             </div>

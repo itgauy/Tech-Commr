@@ -130,11 +130,11 @@ const ContactForm = () => {
           label={
             <>
               Do you agree to the{' '}
-              <Link to="/terms-and-conditions" className="text-green-600 underline">
+              <Link to="/terms-and-conditions" className="text-green-500 underline">
                 terms & conditions
               </Link>{' '}
               and{' '}
-              <Link to="/privacy-policy" className="text-green-600 underline">
+              <Link to="/privacy-policy" className="text-green-500 underline">
                 privacy policy
               </Link>?
             </>

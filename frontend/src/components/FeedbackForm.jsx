@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { Input, Textarea, Checkbox, Button, Select } from '../components/ui';
 
 const StarRating = ({ rating, onRatingChange }) => {
@@ -77,7 +78,7 @@ const FeedbackForm = () => {
         <Textarea
           label={
             <>
-              Please ama ama toto dutioas{' '}
+              Tell us your experience{' '}
               <span className='text-neutral-400 text-xs'>(Optional)</span>
             </>
           }
@@ -93,7 +94,18 @@ const FeedbackForm = () => {
       <div className='md:col-span-2 col-span-1'>
         <Checkbox
           id="Agreement"
-          label={'Wachu gana du wedu bi bap bo? wigi wigi wigi'}
+          label={
+            <>
+              Do you agree to the{' '}
+              <Link to="/terms-and-conditions" className="text-green-500 underline">
+                terms & conditions
+              </Link>{' '}
+              and{' '}
+              <Link to="/privacy-policy" className="text-green-500 underline">
+                privacy policy
+              </Link>?
+            </>
+          }
           value={''}
           checked={''}
           onChange={''}
