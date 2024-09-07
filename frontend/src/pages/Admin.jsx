@@ -1,59 +1,28 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Button } from '../components/ui'
 import { motion } from 'framer-motion';
 
 // Inquiries
 const Inquiries = () => {
-  const commentsData = [
-    {
-      name: 'Juan Dela Cruz',
-      email: 'juan.dela.cruz@gmail.com',
-      date: 'September 1, 2024 at 3:33 PM',
-      category: 'Programming',
-      message: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus sint unde harum accusantium veritatis ipsam recusandae eveniet soluta minus. Eum dicta sed dolores perspiciatis eligendi amet blanditiis enim eius nesciunt.',
-    },
-    {
-      name: 'Juan Dela Cruz',
-      email: 'juan.dela.cruz@gmail.com',
-      date: 'September 1, 2024 at 3:33 PM',
-      category: 'Programming',
-      message: 'Lorem ipsum domet blanditiis enim eius nesciunt.',
-    }, {
-      name: 'Juan Dela Cruz',
-      email: 'juan.dela.cruz@gmail.com',
-      date: 'September 1, 2024 at 3:33 PM',
-      category: 'Programming',
-      message: 'Lorem ipsum dolor sit amet consectetur adipisigendi amet blanditiis enim eius nesciunt.',
-    },
-    {
-      name: 'Juan Dela Cruz',
-      email: 'juan.dela.cruz@gmail.com',
-      date: 'September 1, 2024 at 3:33 PM',
-      category: 'Programming',
-      message: 'Lorem ipsum dolor sit amet consectetur adipiss sint unde harum accusantium veritatis ipsam recusandae eveniet soluta minus. Eum dicta sed dolores piciatis eligendi amet blanditiis enim eius nesciunt.',
-    },
-    {
-      name: 'Juan Dela Cruz',
-      email: 'juan.dela.cruz@gmail.com',
-      date: 'September 1, 2024 at 3:33 PM',
-      category: 'Programming',
-      message: 'Lorem ipsum dolor sit amet consect eligendi amet blanditiis enim eius nesciunt.',
-    },
-    {
-      name: 'Juan Dela Cruz',
-      email: 'juan.dela.cruz@gmail.com',
-      date: 'September 1, 2024 at 3:33 PM',
-      category: 'Programming',
-      message: 'Lorem ipsum dolor sit amet consectetur adipiss sint unde harum accusantium veritatis ipsam recusandae eveniet soluta minus. Eum dicta sed dolores piciatis eligendi amet blanditiis enim eius nesciunt.',
-    },
-    {
-      name: 'Juan Dela Cruz',
-      email: 'juan.dela.cruz@gmail.com',
-      date: 'September 1, 2024 at 3:33 PM',
-      category: 'Programming',
-      message: 'Lorem ipsum dolor sit amet consect eligendi amet blanditiis enim eius nesciunt.',
-    }
-  ]
+  const [inquiries, setInquiries] = useState([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    fetch('http://localhost:3000/api/inquiries')
+      .then(response => {
+        console.log('Response:', response);
+        return response.json();
+      })
+      .then(data => {
+        console.log('Data:', data);
+        setInquiries(data);
+        setLoading(false);
+      })
+      .catch(error => {
+        console.error('Error:', error);
+      });
+  }, []);
+
 
   // Pagination logic
   const commentsPerPage = 4;
@@ -61,9 +30,9 @@ const Inquiries = () => {
 
   const indexOfLastComment = currentPage * commentsPerPage;
   const indexOfFirstComment = indexOfLastComment - commentsPerPage;
-  const currentComments = commentsData.slice(indexOfFirstComment, indexOfLastComment);
+  const currentComments = inquiries.slice(indexOfFirstComment, indexOfLastComment);
 
-  const totalPages = Math.ceil(commentsData.length / commentsPerPage);
+  const totalPages = Math.ceil(inquiries.length / commentsPerPage);
 
   const nextPage = () => {
     if (currentPage < totalPages) {
@@ -104,31 +73,42 @@ const Inquiries = () => {
           </div>
         </div>
         {/* Container */}
-        <motion.div
-          key={currentPage} // Ensure each page has a unique key for proper animation
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          exit={{ opacity: 0 }}
-          transition={{ duration: 0.5 }}
-        >
-          {currentComments.map((feedback, index) => (
-            <div className='border-b bg-blue-200 py-7 space-y-4' key={index}>
-              <div className='flex flex-col items-start gap-6'>
-                <div className='space-y-1'>
-                  <div className='flex items-center gap-3'>
-                    <p className='font-medium text-sm'>{feedback.name}</p>
-                    <p className='font-medium text-xs text-neutral-500'>({feedback.email})</p>
+        {loading ? (
+          <p>Loading...</p>
+        ) : (
+          <motion.div
+            key={currentPage} // Ensure each page has a unique key for proper animation
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.5 }}
+          >
+            {currentComments.map((inquiry, index) => (
+              <div className='border-b bg-blue-200 py-7 space-y-4' key={index}>
+                <div className='flex flex-col items-start gap-6'>
+                  <div className='space-y-1'>
+                    <div className='flex items-center gap-3'>
+                      <p className='font-medium text-sm'>{inquiry.fname} {inquiry.lname}</p>
+                      <p className='font-medium text-xs text-neutral-500'>({inquiry.email})</p>
+                    </div>
+                    <p className='text-xs text-neutral-400'>{new Date(inquiry.createdAt).toLocaleString('en-US', {
+                      year: 'numeric',
+                      month: 'long',
+                      day: 'numeric',
+                      hour: 'numeric',
+                      minute: 'numeric',
+                      hour12: true,
+                    })}</p>
                   </div>
-                  <p className='text-xs text-neutral-400'>{feedback.date}</p>
-                </div>
-                <div className='space-y-2'>
-                  <p>Project Category: <span className='bg-green-200/20 text-green-500 border-green-500/40 border inline-flex items-center gap-1.5 rounded-full px-3 py-1 text-xs mx-2'>{feedback.category}</span></p>
-                  <p>{feedback.message}</p>
+                  <div className='space-y-2'>
+                    <p>Project Category: <span className='bg-green-200/20 text-green-500 border-green-500/40 border inline-flex items-center gap-1.5 rounded-full px-3 py-1 text-xs mx-2'>{inquiry.category}</span></p>
+                    <p>{inquiry.desc}</p>
+                  </div>
                 </div>
               </div>
-            </div>
-          ))}
-        </motion.div>
+            ))}
+          </motion.div>
+        )}
       </div>
     </>
   )
