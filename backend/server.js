@@ -4,6 +4,7 @@ const express = require('express')
 const mongoose = require('mongoose')
 const cors = require('cors')
 const inquiriesRoutes = require('./routes/inquiries')
+const feedbacksRoutes = require('./routes/feedbacks')
 
 // express app
 const app = express()
@@ -19,6 +20,7 @@ app.use((req, res, next) => {
 
 // routes
 app.use('/api', inquiriesRoutes)
+app.use('/api', feedbacksRoutes)
 
 
 // Do not delete

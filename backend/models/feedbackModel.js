@@ -10,7 +10,7 @@ const feedbackSchema = new Schema({
   lname: {
     type: String
   },
-  rate: {
+  rating: {
     type: Number,
     required: true,
     min: 1,

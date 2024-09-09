@@ -12,21 +12,21 @@ const getFeedbacks = async (req, res) => {
 module.exports = {
   createFeedback: async (req, res) => {
     try {
-      const { fname, lname, rate, category, desc } = req.body
+      const { fname, lname, rating, category, desc } = req.body
 
       // Validation of input data
-      if (!fname || !category || !desc || !rate) {
+      if (!fname || !category || !desc || !rating) {
         return res.status(400).send({ message: 'Please provide all required fields' });
       }
 
       // Sanitation and formatting of data
       const sanitizedDesc = desc.trim()
 
-      // Creation of new inquiry document
+      // Creation of new feedback document
       const feedback = new Feedback({
         fname,
         lname,
-        email,
+        rating,
         category,
         desc: sanitizedDesc
       })

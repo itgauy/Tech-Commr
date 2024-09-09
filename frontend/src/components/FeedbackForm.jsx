@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { Input, Textarea, Checkbox, Button, Select } from '../components/ui';
+import { Input, Textarea, Button, Select } from '../components/ui';
 
 const StarRating = ({ rating, onRatingChange }) => {
   const [hovered, setHovered] = useState(null);
@@ -26,32 +26,73 @@ const StarRating = ({ rating, onRatingChange }) => {
 };
 
 const FeedbackForm = () => {
-  // Rating
+  const [fname, setFname] = useState('');
+  const [lname, setLname] = useState('');
   const [rating, setRating] = useState(0);
+  const [category, setCategory] = useState('');
+  const [desc, setDesc] = useState('');
+  const [error, setError] = useState(null);
+  const [success, setSuccess] = useState(null);
+  const [errorFields, setErrorFields] = useState([]);
+
   const handleRatingChange = (newRating) => {
     setRating(newRating);
   };
 
-  // Select (Categories)
   const handleCategoryChange = (e) => {
     setCategory(e.target.value);
   };
 
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    if (!fname || !category || !desc || !rating) {
+      setError('Please fill in all required fields');
+      setSuccess(null);
+      const errorFields = [];
+      if (!fname) errorFields.push('fname');
+      if (!category) errorFields.push('category');
+      if (!desc) errorFields.push('desc');
+      if (!rating) errorFields.push('rating');
+      setErrorFields(errorFields);
+      return;
+    }
+    setErrorFields([]);
+    try {
+      setError(null);
+      setFname('');
+      setLname('');
+      setRating(0);
+      setCategory('');
+      setDesc('');
+      const response = await fetch('http://localhost:3000/api/feedback', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ fname, lname, rating, category, desc }),
+      });
+      const data = await response.json();
+      setSuccess(data.message);
+      setError(null);
+    } catch (error) {
+      setError('Error creating feedback');
+      setSuccess(null);
+    }
+  };
 
   return (
-    <form className='grid md:grid-cols-2 grid-cols-1 bg-white rounded-2xl md:p-8 p-6 gap-5' onSubmit={''}>
+    <form className='grid md:grid-cols-2 grid-cols-1 bg-white rounded-2xl md:p-8 p-6 gap-5' onSubmit={handleSubmit}>
       {/* First Name */}
-      <Input type={'text'} placeholder={'Juan'} value={''} onChange={''} error={''}>
+      <Input type={'text'} placeholder={'Juan'} value={fname} onChange={(e) => setFname(e.target.value)} error={errorFields.includes('fname')}>
         <p>First name <span className='text-red-500'>*</span></p>
       </Input>
       {/* Last Name */}
-      <Input type={'text'} placeholder={'Dela Cruz'} value={''} onChange={''} >
+      <Input type={'text'} placeholder={'Dela Cruz'} value={lname} onChange={(e) => setLname(e.target.value)}>
         <p>Last name <span className='text-neutral-400 text-xs'>(Optional)</span></p>
       </Input>
       {/* Rating Component */}
       <div className='space-y-2'>
         <p>Rate your experience <span className='text-red-500'>*</span></p>
         <StarRating rating={rating} onRatingChange={handleRatingChange} />
+        {errorFields.includes('rating') && <div className='text-red-500 text-xs'>Please select a rating</div>}
       </div>
       {/* Select Component */}
       <div className=''>
@@ -68,10 +109,11 @@ const FeedbackForm = () => {
             'UI/UX Design',
             'Paper Works',
           ]}
-          value={''}
+          value={category}
           onChange={handleCategoryChange}
-          error={''}
+          error={errorFields.includes('category')}
         />
+        {errorFields.includes('category') && <div className='text-red-500 text-xs'>Please select a category</div>}
       </div>
       {/* Message */}
       <div className='md:col-span-2 col-span-1'>
@@ -85,41 +127,21 @@ const FeedbackForm = () => {
           placeholder="Enter your message here..."
           rows={2}
           name="message"
-          value={''}
-          onChange={''}
-          error={''}
+          value={desc}
+          onChange={(e) => setDesc(e.target.value)}
+          error={errorFields.includes('desc')}
         />
-      </div>
-      {/* Checkbox */}
-      <div className='md:col-span-2 col-span-1'>
-        <Checkbox
-          id="Agreement"
-          label={
-            <>
-              Do you agree to the{' '}
-              <Link to="/terms-and-conditions" className="text-green-500 underline">
-                terms & conditions
-              </Link>{' '}
-              and{' '}
-              <Link to="/privacy-policy" className="text-green-500 underline">
-                privacy policy
-              </Link>?
-            </>
-          }
-          value={''}
-          checked={''}
-          onChange={''}
-          error={''}
-        />
-        {/* {termsError && <div className='text-red-500 text-xs pt-2'>Please agree to the terms & conditions and privacy policy </div>} */}
+        {errorFields.includes('desc') && <div className='text-red-500 text-xs'>Please enter a description</div>}
       </div>
       {/* Submit */}
       <div className='md:col-span-2 col-span-1 pt-2'>
         <Button type={'submit'} text={'Post comment'} styles='w-full flex items-center justify-center bg-green-500 hover:bg-green-600/90 text-white active:scale-95'
         />
       </div>
+      {error && <div className='text-red-500 md:text-sm text-xs'>{error}</div>}
+      {success && <div className='text-green-500 md:text-sm text-xs'>{success}</div>}
     </form>
-  )
-}
+  );
+};
 
-export default FeedbackForm
+export default FeedbackForm;
