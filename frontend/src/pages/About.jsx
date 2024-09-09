@@ -51,10 +51,10 @@ const About = () => {
       {/* Vision and Mission */}
       <div className='flex flex-wrap md:gap-14 gap-10 justify-center md:px-20 md:py-24 py-16 px-12'>
         {[
-          { title: 'Vision', content: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque, facilis porro aspernatur ducimus placeat ea fugit est nam laborum doloremque suscipit voluptatum autem reiciendis! Maxime exercitationem dicta cupiditate aliquam totaam.' },
-          { title: 'Mission', content: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque, facilis porro aspernatur ducimus placeat ea fugit est nam laborum doloremque suscipit voluptatum autem reiciendis! Maxime exercitationem dicta cupiditate aliquam totaam.' }
+          { title: 'Vision', content: 'To empower individuals and businesses by providing exceptional, customized digital solutions and design services.' },
+          { title: 'Mission', content: 'To be a leading commission-based platform recognized for delivering innovative, reliable, and creative solutions that exceed client expectations.' }
         ].map((content, index) => (
-          <div className='text-center w-full max-w-md md:space-y-7 space-y-4 border border-red-500' key={index}>
+          <div className='text-center w-full max-w-sm md:space-y-7 space-y-4' key={index}>
             <h3 className='leading-none'>
               Our <span className='text-green-500'>{content.title}</span>
             </h3>

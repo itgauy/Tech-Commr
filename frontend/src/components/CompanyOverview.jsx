@@ -36,7 +36,7 @@ const CompanyOverview = () => {
           <h1 className='text-center text-neutral-100'>
             Tech-Commr
           </h1>
-          <p className='text-center text-neutral-300 w-full max-w-xl border border-red-500'>At LinkrDev, we help you excel academically without the stress. Our expert solutions in university projects, programming, and design are tailored to ensure you achieve top grades effortlessly. Focus on your studies while we handle the rest.</p>
+          <p className='text-center text-neutral-300 w-full max-w-xl'>At Tech-Commr, we provide tailored support in programming, web development, database management, graphic design, and documentation. From our humble start to becoming a trusted name in academic assistance, we’re here to help students succeed without the stress. Our mission is to empower you with the skills and confidence to excel in your studies, every step of the way.</p>
         </div>
         {/* CTA */}
         <Link to='/about'>

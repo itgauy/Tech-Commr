@@ -61,8 +61,8 @@ const Company = () => {
                 </div>
               </div>
             </div>
-            <p className='text-center text-neutral-300 w-full max-w-2xl border border-red-500'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque, facilis porro aspernatur ducimus placeat ea fugit est nam laborum doloremque suscipit voluptatum autem reiciendis! Maxime exercitationem dicta cupiditate aliquam totam. Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque, facilis porro aspernatur ducimus placeat</p>
-            <p className='text-center text-neutral-300 w-full max-w-2xl border border-red-500'> Sea fugit est nam laborum doloremque suscipit voluptatum autem reiciendis! Maxime exercitationem dicta cupiditate aliquam totam.Sea fugit est nam laborum doloremque suscipit voluptatum autem reiciendis! Maxime exercitationem dicta cupiditate aliquam totam.</p>
+            <p className='text-center text-neutral-300 w-full max-w-2xl'>Founded with a vision to transform the way students approach academic challenges, Tech-Commr is your trusted partner in achieving excellence without stress. Established by Lian Torres in 2021, Tech-Commr was initially created to connect students with expert assistance for essays, research, IT projects, and exams.</p>
+            <p className='text-center text-neutral-300 w-full max-w-2xl'>At Tech-Commr, we’re dedicated to easing academic pressure by offering tailored, high-quality solutions in programming, web development, database management, graphic design, and professional paperwork. From our humble beginnings to becoming a trusted resource, we continue to evolve with a focus on empowering students to excel. Let us be your partners in success, helping you build confidence and thrive in your academic journey.</p>
           </div>
         </div>
       </div>

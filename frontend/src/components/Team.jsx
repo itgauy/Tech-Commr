@@ -96,7 +96,7 @@ const Team = () => {
             profile={'https://media.tenor.com/yskj0PnyEpoAAAAM/borpynino.gif'}
             name={'Kiel Marice Serrano'}
             quote={'lorem asdf asdf asdf asdfff lorem asdkljhf lajsywh kakjsdfh yakljshdfyh'}
-            roles={['Marketing Officer', 'Social Media Manager', 'Content Strategist']}
+            roles={['Marketing Officer - Project Coordinator', 'Social Media Manager', 'Content Strategist - System Analyst']}
             socials={
               [
                 {
