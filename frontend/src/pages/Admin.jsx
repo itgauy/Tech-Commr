@@ -232,8 +232,33 @@ const Feedbacks = () => {
                   <p>Category: {feedback.category}</p>
                   <p>{feedback.desc}</p>
                 </div>
-                <Button type={'submit'} text={'Wag'} styles='py-1 px-[9px] text-xs flex items-center justify-center bg-green-500 hover:bg-green-600/90 text-white active:scale-95'
-                />
+                {feedback.isAccepted ? (
+                  <p className='text-green-500'>Displayed</p>
+                ) : (
+                  <Button
+                    type={'submit'}
+                    text={'Display'}
+                    styles='py-1 px-[9px] text-xs flex items-center justify-center bg-green-500 hover:bg-green-600/90 text-white active:scale-95'
+                    onClick={async () => {
+                      try {
+                        const response = await fetch(`http://localhost:3000/api/feedbacks/${feedback._id}`, {
+                          method: 'PATCH',
+                          headers: { 'Content-Type': 'application/json' },
+                          body: JSON.stringify({ isAccepted: true }),
+                        });
+                        const data = await response.json();
+                        console.log(data);
+                        // Update the feedback state
+                        const updatedFeedbacks = [...feedbacks];
+                        const index = updatedFeedbacks.findIndex((f) => f._id === feedback._id);
+                        updatedFeedbacks[index].isAccepted = true;
+                        setFeedbacks(updatedFeedbacks);
+                      } catch (error) {
+                        console.error(error);
+                      }
+                    }}
+                  />
+                )}
               </div>
             ))}
           </motion.div>

@@ -23,6 +23,10 @@ const feedbackSchema = new Schema({
   desc: {
     type: String,
     required: true
+  },
+  isAccepted: {
+    type: Boolean,
+    default: false
   }
 }, { timestamps: true })
 
