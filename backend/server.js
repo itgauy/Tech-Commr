@@ -11,13 +11,7 @@ const app = express()
 
 // middleware
 app.use(express.json())
-const cors = require('cors');
-// Allow all origins
 app.use(cors());
-// Allow specific origin(s)
-app.use(cors({
-  origin: 'https://tech-commr.vercel.app/'
-}));
 
 app.use((req, res, next) => {
   console.log(req.path, req.method)
