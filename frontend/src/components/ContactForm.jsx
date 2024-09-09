@@ -58,7 +58,7 @@ const ContactForm = () => {
       setSelectedCategories([])
       setDesc('')
       setTermsAgreed(false)
-      const response = await fetch('https://tech-commr-backend.vercel.app/api/inquiry', {
+      const response = await fetch('http://localhost:3000/api/inquiry', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ fname, lname, email, category: selectedCategories, desc, termsAgreed })

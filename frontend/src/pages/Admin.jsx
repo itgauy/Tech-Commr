@@ -122,7 +122,7 @@ const Feedbacks = () => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch('https://tech-commr-backend.vercel.app/api/feedbacks')
+    fetch('http://localhost:3000/api/feedbacks')
       .then(response => {
         console.log('Response:', response);
         return response.json();
