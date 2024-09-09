@@ -64,7 +64,7 @@ const FeedbackForm = () => {
       setRating(0);
       setCategory('');
       setDesc('');
-      const response = await fetch(`${process.env.REACT_APP_API_URL}/api/feedback`, {
+      const response = await fetch(`${import.meta.env.VITE_API_URL}/api/feedback`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ fname, lname, rating, category, desc }),

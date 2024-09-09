@@ -25,7 +25,7 @@ const Feedback = () => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch(`${process.env.REACT_APP_API_URL}/api/accepted`)
+    fetch(`${import.meta.env.VITE_API_URL}/api/accepted`)
       .then(response => {
         console.log('Response:', response);
         return response.json();
