@@ -96,7 +96,7 @@ const Feedback = () => {
           <div className='space-y-4'>
             <div className='flex justify-between items-end'>
               <div className='space-y-1'>
-                <p className='text-base font-semibold'>Recent Comments</p>
+                <p className='text-base font-semibold'>Recent Feedbacks</p>
                 <p className='text-xs'>Page {currentPage} of {totalPages}</p>
               </div>
               {/* Pagination Controls */}
