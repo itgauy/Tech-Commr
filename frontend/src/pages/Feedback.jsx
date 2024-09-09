@@ -25,7 +25,7 @@ const Feedback = () => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch('http://localhost:3000/api/accepted')
+    fetch('https://tech-commr-backend.vercel.app/api/accepted')
       .then(response => {
         console.log('Response:', response);
         return response.json();

@@ -8,7 +8,7 @@ const Inquiries = () => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch('http://localhost:3000/api/inquiries')
+    fetch('https://tech-commr-backend.vercel.app/api/inquiries')
       .then(response => {
         console.log('Response:', response);
         return response.json();
@@ -122,7 +122,7 @@ const Feedbacks = () => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch('http://localhost:3000/api/feedbacks')
+    fetch('https://tech-commr-backend.vercel.app/api/feedbacks')
       .then(response => {
         console.log('Response:', response);
         return response.json();
@@ -241,7 +241,7 @@ const Feedbacks = () => {
                     styles='py-1 px-[9px] text-xs flex items-center justify-center bg-green-500 hover:bg-green-600/90 text-white active:scale-95'
                     onClick={async () => {
                       try {
-                        const response = await fetch(`http://localhost:3000/api/feedbacks/${feedback._id}`, {
+                        const response = await fetch(`https://tech-commr-backend.vercel.app/api/feedbacks/${feedback._id}`, {
                           method: 'PATCH',
                           headers: { 'Content-Type': 'application/json' },
                           body: JSON.stringify({ isAccepted: true }),
