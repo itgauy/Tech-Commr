@@ -12,29 +12,44 @@ const FAQs = () => {
 
   const faqsData = [
     {
-      title: 'Wachu gana du wedu bip bap bo? wigi wigi wigi',
+      title: 'What services does Tech-Commr offer?',
       content:
-        'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis explicabo consequatur soluta, totam beatae consectetur voluptatum dolor vel quasi, quod velit.',
+        'Tech-Commr offers a range of services, including programming, web development, database management, graphic design, and professional documentation. We also provide personalized academic support, such as research assistance and essay writing.',
     },
     {
-      title: 'Wachu gana du wedu bip bap bo? wigi wigi wigi',
+      title: 'How do I request a service?',
       content:
-        'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis explicabo consequatur soluta, totam beatae consectetur voluptatum dolor vel quasi, quod velit.',
+        'To request a service, simply visit our website and fill out the service request form. Be sure to provide all necessary information, such as task details, deadlines, and additional instructions.',
     },
     {
-      title: 'Wachu gana du wedu bip bap bo? wigi wigi wigi',
+      title: 'What is the payment process?',
       content:
-        'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis explicabo consequatur soluta, totam beatae consectetur voluptatum dolor vel quasi, quod velit.',
+        'We operate on a “payment first” policy. Once we send proof of the output, you must make the payment before receiving the final task. Payments are typically made via GCash, but alternative methods may be considered based on your situation.',
     },
     {
-      title: 'Wachu gana du wedu bip bap bo? wigi wigi wigi',
+      title: 'Can I request a service before paying?',
       content:
-        'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis explicabo consequatur soluta, totam beatae consectetur voluptatum dolor vel quasi, quod velit.',
+        'Yes, but only under specific conditions. You will need to provide two valid IDs and a picture of yourself. This option is available for clients using real accounts and may vary depending on the task.',
     },
     {
-      title: 'Wachu gana du wedu bip bap bo? wigi wigi wigi',
+      title: 'How are prices determined?',
       content:
-        'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis explicabo consequatur soluta, totam beatae consectetur voluptatum dolor vel quasi, quod velit.',
+        'Our pricing varies depending on the complexity and urgency of the task. We provide a quote based on the requirements you share with us, ensuring you understand the costs before starting.',
+    },
+    {
+      title: 'Do you charge extra for urgent tasks?',
+      content:
+        'Yes, we charge a rush fee for tasks with tight deadlines. If the deadline is within the same day, the fee ranges from PHP 50-100. For deadlines within 1-2 days, it ranges from PHP 10-50. For deadlines of 3 days or more, no rush fee is applied.',
+    },
+    {
+      title: 'Can I ask for revisions?',
+      content:
+        'Yes, revisions are available depending on the agreement made during your service request. We typically offer 1-2 free revisions, but additional revisions may be subject to extra fees.',
+    },
+    {
+      title: 'What happens if I violate the terms and conditions?',
+      content:
+        'If you violate any of our terms and conditions, we reserve the right to discontinue the service. If we fail to meet the agreed terms, you are entitled to request a refund if payment has been made.',
     },
   ];
 
@@ -48,7 +63,7 @@ const FAQs = () => {
         </p>
       </div>
       {/* Accordion */}
-      <div className='w-full max-w-4xl border border-red-500'>
+      <div className='w-full max-w-4xl'>
         {faqsData.map((accordion, index) => (
           <Accordion
             key={index}
