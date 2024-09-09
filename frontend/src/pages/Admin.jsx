@@ -241,7 +241,7 @@ const Feedbacks = () => {
                     styles='py-1 px-[9px] text-xs flex items-center justify-center bg-green-500 hover:bg-green-600/90 text-white active:scale-95'
                     onClick={async () => {
                       try {
-                        const response = await fetch(`${import.meta.env.VITE_API_URL} /api/feedbacks/${feedback._id}`, {
+                        const response = await fetch(`${import.meta.env.VITE_API_URL}/api/feedbacks/${feedback._id}`, {
                           method: 'PATCH',
                           headers: { 'Content-Type': 'application/json' },
                           body: JSON.stringify({ isAccepted: true }),
