@@ -118,42 +118,24 @@ const Inquiries = () => {
 
 // Feedback
 const Feedbacks = () => {
-  const commentsData = [
-    {
-      initial: 'JC',
-      name: 'Juan Dela Cruz',
-      date: 'September 1, 2024 at 3:33 PM',
-      rate: 4,
-      comment: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus sint unde harum accusantium veritatis ipsam recusandae eveniet soluta minus. Eum dicta sed dolores perspiciatis eligendi amet blanditiis enim eius nesciunt.',
-    },
-    {
-      initial: 'JC',
-      name: 'Juan Dela Cruz',
-      date: 'September 1, 2024 at 3:33 PM',
-      rate: 2,
-      comment: 'Lorem ipsum domet blanditiis enim eius nesciunt.',
-    }, {
-      initial: 'JC',
-      name: 'Juan Dela Cruz',
-      date: 'September 1, 2024 at 3:33 PM',
-      rate: 4,
-      comment: 'Lorem ipsum dolor sit amet consectetur adipisigendi amet blanditiis enim eius nesciunt.',
-    },
-    {
-      initial: 'JC',
-      name: 'Juan Dela Cruz',
-      date: 'September 1, 2024 at 3:33 PM',
-      rate: 1,
-      comment: 'Lorem ipsum dolor sit amet consectetur adipiss sint unde harum accusantium veritatis ipsam recusandae eveniet soluta minus. Eum dicta sed dolores piciatis eligendi amet blanditiis enim eius nesciunt.',
-    },
-    {
-      initial: 'JC',
-      name: 'Juan Dela Cruz',
-      date: 'September 1, 2024 at 3:33 PM',
-      rate: 4,
-      comment: 'Lorem ipsum dolor sit amet consect eligendi amet blanditiis enim eius nesciunt.',
-    }
-  ]
+  const [feedbacks, setFeedbacks] = useState([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    fetch('http://localhost:3000/api/feedbacks')
+      .then(response => {
+        console.log('Response:', response);
+        return response.json();
+      })
+      .then(data => {
+        console.log('Data:', data);
+        setFeedbacks(data);
+        setLoading(false);
+      })
+      .catch(error => {
+        console.error('Error:', error);
+      });
+  }, []);
 
   // Pagination logic
   const commentsPerPage = 4;
@@ -161,10 +143,9 @@ const Feedbacks = () => {
 
   const indexOfLastComment = currentPage * commentsPerPage;
   const indexOfFirstComment = indexOfLastComment - commentsPerPage;
-  const currentComments = commentsData.slice(indexOfFirstComment, indexOfLastComment);
+  const currentComments = feedbacks.slice(indexOfFirstComment, indexOfLastComment);
 
-  const totalPages = Math.ceil(commentsData.length / commentsPerPage);
-
+  const totalPages = Math.ceil(feedbacks.length / commentsPerPage);
 
   const nextPage = () => {
     if (currentPage < totalPages) {
@@ -218,33 +199,45 @@ const Feedbacks = () => {
           </div>
         </div>
         {/* Container */}
-        <motion.div
-          key={currentPage} // Ensure each page has a unique key for proper animation
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          exit={{ opacity: 0 }}
-          transition={{ duration: 0.5 }}
-        >
-          {currentComments.map((feedback, index) => (
-            <div className='border-b bg-red-200 py-7 space-y-4' key={index}>
-              <div className='flex items-center gap-4'>
-                <span className='inline-flex md:size-9 size-8 -ml-1 border-2 border-neutral-50 ring-2 ring-neutral-300 items-center justify-center rounded-full bg-green-500 md:text-md text-[11px] leading-none text-white'>
-                  {feedback.initial}
-                </span>
-                <div className='flex flex-col items-start gap-[3px]'>
-                  <p className='font-medium text-sm'>{feedback.name}</p>
-                  <p className='text-xs text-neutral-400'>{feedback.date}</p>
+        {loading ? (
+          <p>Loading...</p>
+        ) : (
+          <motion.div
+            key={currentPage} // Ensure each page has a unique key for proper animation
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.5 }}
+          >
+            {currentComments.map((feedback, index) => (
+              <div className='border-b bg-red-200 py-7 space-y-4' key={index}>
+                <div className='flex items-center gap-4'>
+                  <span className='inline-flex md:size-9 size-8 -ml-1 border-2 border-neutral-50 ring-2 ring-neutral-300 items-center justify-center rounded-full bg-green-500 md:text-md text-[11px] leading-none text-white'>
+                    {feedback.fname.charAt(0) + feedback.lname.charAt(0)}
+                  </span>
+                  <div className='flex flex-col items-start gap-[3px]'>
+                    <p className='font-medium text-sm'>{feedback.fname} {feedback.lname}</p>
+                    <p className='text-xs text-neutral-400'>{new Date(feedback.createdAt).toLocaleString('en-US', {
+                      year: 'numeric',
+                      month: 'long',
+                      day: 'numeric',
+                      hour: 'numeric',
+                      minute: 'numeric',
+                      hour12: true,
+                    })}</p>
+                  </div>
                 </div>
+                <div className='pl-11 md:pl-12 space-y-3'>
+                  <StarRatingDisplay rating={feedback.rating} />
+                  <p>Category: {feedback.category}</p>
+                  <p>{feedback.desc}</p>
+                </div>
+                <Button type={'submit'} text={'Wag'} styles='py-1 px-[9px] text-xs flex items-center justify-center bg-green-500 hover:bg-green-600/90 text-white active:scale-95'
+                />
               </div>
-              <div className='pl-11 md:pl-12 space-y-3'>
-                <StarRatingDisplay rating={feedback.rate} />
-                <p>{feedback.comment}</p>
-              </div>
-              <Button type={'submit'} text={'Wag'} styles='py-1 px-[9px] text-xs flex items-center justify-center bg-green-500 hover:bg-green-600/90 text-white active:scale-95'
-              />
-            </div>
-          ))}
-        </motion.div>
+            ))}
+          </motion.div>
+        )}
       </div>
     </>
   )
