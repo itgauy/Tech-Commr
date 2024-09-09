@@ -25,7 +25,7 @@ const Feedback = () => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch('http://localhost:3000/api/accepted')
+    fetch(`${process.env.REACT_APP_API_URL}/api/accepted`)
       .then(response => {
         console.log('Response:', response);
         return response.json();
