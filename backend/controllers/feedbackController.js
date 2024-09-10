@@ -42,7 +42,7 @@ const createFeedback = async (req, res) => {
     await feedback.save()
 
     // Return of success response
-    res.status(200).send({ message: 'Feedback submitted successfully!' })
+    res.status(200).send({ message: 'Feedback submitted for approval!' })
   } catch (error) {
     // Log of error and return of error response
     console.error(error)
