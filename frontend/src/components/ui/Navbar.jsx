@@ -110,21 +110,25 @@ const Navbar = () => {
 
       {/* CTAs */}
       <div className='lg:flex hidden items-center gap-3'>
-        <Button
-          onClick={handleMenuItemClick}
-          text={'Get started'}
-          styles='text-nowrap bg-green-300/10 hover:bg-green-300/20 text-green-500 active:scale-95'
-        />
-        <Button
-          onClick={handleMenuItemClick}
-          text={'Get started'}
-          styles='text-nowrap bg-green-500 hover:bg-green-600/90 text-white active:scale-95'
-          trailingIcon={
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-4">
-              <path strokeLinecap="round" strokeLinejoin="round" d="m4.5 19.5 15-15m0 0H8.25m11.25 0v11.25" />
-            </svg>
-          }
-        />
+        <Link to='/login'>
+          <Button
+            onClick={handleMenuItemClick}
+            text={'Login'}
+            styles='text-nowrap bg-green-300/10 hover:bg-green-300/20 text-green-500 active:scale-95'
+          />
+        </Link>
+        <Link to='/sign-up'>
+          <Button
+            onClick={handleMenuItemClick}
+            text={'Sign up'}
+            styles='text-nowrap bg-green-500 hover:bg-green-600/90 text-white active:scale-95'
+            trailingIcon={
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-4">
+                <path strokeLinecap="round" strokeLinejoin="round" d="m4.5 19.5 15-15m0 0H8.25m11.25 0v11.25" />
+              </svg>
+            }
+          />
+        </Link>
       </div>
     </nav >
   );
