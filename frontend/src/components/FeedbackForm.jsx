@@ -138,8 +138,10 @@ const FeedbackForm = () => {
         <Button type={'submit'} text={'Post comment'} styles='w-full flex items-center justify-center bg-green-500 hover:bg-green-600/90 text-white active:scale-95'
         />
       </div>
-      {error && <div className='text-red-500 md:text-sm text-xs'>{error}</div>}
-      {success && <div className='text-green-500 md:text-sm text-xs'>{success}</div>}
+      <div className='md:col-span-2 col-span-1'>
+        {error && <div className='text-red-500 md:text-sm text-xs'>{error}</div>}
+        {success && <div className='text-green-500 md:text-sm text-xs'>{success}</div>}
+      </div>
     </form>
   );
 };
